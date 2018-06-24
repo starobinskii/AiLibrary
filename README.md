@@ -7,7 +7,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Egor Starobinskii Thompson** - *Initial work* - [starobinskii](https://github.com/starobinskii)
+* **Egor Starobinskii** - *Initial work* - [starobinskii](https://github.com/starobinskii)
 
 See also the list of [contributors](https://github.com/starobinskii/AiLibrary/contributors) who participated in this project.
 
