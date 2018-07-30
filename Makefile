@@ -7,8 +7,8 @@
 
 #*# ************************************************************************ #*#
 
-ifeq ($(origin CC), default)
-CC = g++
+ifeq ($(origin CXX), default)
+CXX = g++
 endif
 CFLAGS ?= -w -std=c++11 -O3
 
@@ -32,10 +32,10 @@ all:	$(MAIN)
 		@echo  $(MAIN) has been compiled
 
 $(MAIN): $(OBJS) 
-		$(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
+		$(CXX) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
 
 .cc.o:
-		$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
+		$(CXX) $(CFLAGS) $(INCLUDES) -c $<  -o $@
 
 clean:
 		$(RM) ./*.o ./*~ $(MAIN)
