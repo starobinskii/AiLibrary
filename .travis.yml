@@ -1,0 +1,12 @@
+#https://travis-ci.org/starobinskii/AiLibrary
+sudo: false
+language: c++
+os:
+  - osx
+  - linux
+compiler:
+  - clang
+  - gcc
+before_install:
+install: make
+script: ./app.out
