@@ -8,5 +8,5 @@ compiler:
   - clang
   - gcc
 before_install:
-install: make
-script: ./app.out
+script: make
+after_success: ./app.out
