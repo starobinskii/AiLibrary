@@ -16,9 +16,9 @@
 #include <sys/stat.h>
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
-	#include "Include/dirent/dirent.h"
+    #include "Include/dirent/dirent.h"
 #else
-	#include <dirent.h>
+    #include <dirent.h>
 #endif
 
 namespace ai{
@@ -63,7 +63,7 @@ namespace ai{
 
         ++count;
 
-    	return "Marker #" + ai::string(count);
+        return "Marker #" + ai::string(count);
     }
 
     inline void printMarker(std::size_t value = 0){
@@ -821,7 +821,7 @@ namespace ai{
             for(std::string line; getline(input, line);){
                 ++count;
             }
-		}else{
+        }else{
             for(std::string line; getline(input, line);){
                 if(std::string::npos != line.find(token)){
                     ++count;
@@ -874,7 +874,7 @@ namespace ai{
             );
         }
 
-    	while(!feof(pipe.get())){
+        while(!feof(pipe.get())){
             if(nullptr != fgets(buffer.data(), 128, pipe.get())){
                 result += buffer.data();
             }
