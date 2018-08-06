@@ -20,18 +20,27 @@ LIBS =
 
 SRCS = ./main.cc
 
+HDR = ./ai.hh
+
 MAIN = ./app.out
+
+INSTALL_DIR = /usr/local/include
 
 #*# ************************************************************************ #*#
 
 OBJS = $(SRCS:.cc=.o)
 
+INSTLIB = $(INSTALL_DIR)/$(HDR)
+
 .PHONY: depend clean
 
-all:	$(MAIN)
+all: $(MAIN)
 		@echo  $(MAIN) has been compiled
+		
+$(INSTLIB): 
+		cp -vf $(HDR) $(INSTALL_DIR)
 
-$(MAIN): $(OBJS) 
+$(MAIN): $(INSTLIB) $(OBJS)
 		$(CXX) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
 
 .cc.o:
@@ -39,6 +48,9 @@ $(MAIN): $(OBJS)
 
 clean:
 		$(RM) ./*.o ./*~ $(MAIN)
+		
+install: 
+		$(CPHDRS)
 
 depend: $(SRCS)
 		makedepend $(INCLUDES) $^
