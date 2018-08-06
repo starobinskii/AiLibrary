@@ -40,7 +40,7 @@ all: $(MAIN)
 $(INSTLIB): 
 		cp -vf $(HDR) $(INSTALL_DIR)
 
-$(MAIN): $(INSTLIB) $(OBJS)
+$(MAIN): $(OBJS)
 		$(CXX) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
 
 .cc.o:
@@ -49,8 +49,7 @@ $(MAIN): $(INSTLIB) $(OBJS)
 clean:
 		$(RM) ./*.o ./*~ $(MAIN)
 		
-install: 
-		$(CPHDRS)
+install: $(INSTLIB)
 
 depend: $(SRCS)
 		makedepend $(INCLUDES) $^
