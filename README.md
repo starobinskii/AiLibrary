@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/starobinskii/AiLibrary.svg?branch=master)](https://travis-ci.org/starobinskii/AiLibrary)
+[![Build status](https://ci.appveyor.com/api/projects/status/4xrlm3of4yy0h662/branch/master?svg=true)](https://ci.appveyor.com/project/starobinskii/ailibrary/branch/master)
+
 # AiLibrary
 C++ Library from Ailurus Studio
 
@@ -14,4 +17,3 @@ See also the list of [contributors](https://github.com/starobinskii/AiLibrary/co
 ## License
 
 This project is licensed under the BSD 3-Clause License - see the [LICENSE.md](LICENSE.md) file for details
-
