@@ -10,7 +10,7 @@
 ifeq ($(origin CXX), default)
 CXX = g++
 endif
-CFLAGS ?= -w -std=c++11 -O3
+CXXFLAGS ?= -w -std=c++11 -O3
 
 INCLUDES = 
 
@@ -24,7 +24,7 @@ HDR = ./ai.hh
 
 MAIN = ./app.out
 
-INSTALL_DIR = /usr/local/include
+DESTDIR ?= /usr/local/include
 
 #*# ************************************************************************ #*#
 
@@ -38,13 +38,13 @@ all: $(MAIN)
 		@echo  $(MAIN) has been compiled
 		
 $(INSTLIB): 
-		cp -vf $(HDR) $(INSTALL_DIR)
+		cp -vf $(HDR) $(DESTDIR)
 
 $(MAIN): $(OBJS)
-		$(CXX) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
+		$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
 
 .cc.o:
-		$(CXX) $(CFLAGS) $(INCLUDES) -c $<  -o $@
+		$(CXX) $(CXXFLAGS) $(INCLUDES) -c $<  -o $@
 
 clean:
 		$(RM) ./*.o ./*~ $(MAIN)
