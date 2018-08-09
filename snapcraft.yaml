@@ -6,9 +6,10 @@ grade: stable
 confinement: classic
 
 parts:
-  ai.hh:
+  ai:
     plugin: make
-    source: https://github.com/starobinskii/AiLibrary/archive/v1.1.0.tar.gz
+    source: git://github.com/starobinskii/AiLibrary.git
+    source-type: git
     build-packages:
       - g++
       - make
