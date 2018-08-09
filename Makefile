@@ -24,7 +24,15 @@ HDR = ./ai.hh
 
 MAIN = ./app.out
 
-DESTDIR ?= /usr/local/include
+ifeq ($(PREFIX),)
+	PREFIX := /usr/local
+endif
+
+ifeq ($(verbose),true)
+	ai_echo :=
+else
+	ai_echo := @
+endif
 
 #*# ************************************************************************ #*#
 
@@ -36,9 +44,6 @@ INSTLIB = $(INSTALL_DIR)/$(HDR)
 
 all: $(MAIN)
 		@echo  $(MAIN) has been compiled
-		
-$(INSTLIB): 
-		cp -vf $(HDR) $(DESTDIR)
 
 $(MAIN): $(OBJS)
 		$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
@@ -49,7 +54,10 @@ $(MAIN): $(OBJS)
 clean:
 		$(RM) ./*.o ./*~ $(MAIN)
 		
-install: $(INSTLIB)
+install: ai.hh
+		$(ai_echo)install -d $(DESTDIR)$(PREFIX)/include/
+		$(ai_echo)install -m 644 ai.hh $(DESTDIR)$(PREFIX)/include/
+		ln -f -s -v $(DESTDIR)$(PREFIX)/include/ai.hh $(DESTDIR)$(PREFIX)/include/ai
 
 depend: $(SRCS)
 		makedepend $(INCLUDES) $^
