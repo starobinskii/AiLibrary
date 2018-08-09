@@ -57,7 +57,7 @@ clean:
 install: ai.hh
 		$(ai_echo)install -d $(DESTDIR)$(PREFIX)/include/
 		$(ai_echo)install -m 644 ai.hh $(DESTDIR)$(PREFIX)/include/
-		ln -f -s -v $(DESTDIR)$(PREFIX)/include/ai.hh $(DESTDIR)$(PREFIX)/include/ai
+		cd $(DESTDIR)$(PREFIX)/include/ && ln -f -s -v ai.hh ai
 
 depend: $(SRCS)
 		makedepend $(INCLUDES) $^
