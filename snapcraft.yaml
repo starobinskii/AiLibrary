@@ -1,5 +1,5 @@
 name: ailibrary
-version: "1.1.0"
+version: "1.2.0"
 summary: C++ Library from Ailurus Studio
 description: This is a single-header C++ Library from Ailurus Studio that brings you extra time to admire life instead of coding the same functions again and again.
 grade: stable
