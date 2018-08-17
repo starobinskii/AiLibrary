@@ -59,7 +59,7 @@ namespace ai{
     /// \details This function returns version of the AiLibrary (we use SemVer)
     /// \return Version as a string
     INLINE std::string getVersion(){
-        return "1.1.0";
+        return "1.2.0";
     }
 
     /// \} End of LibraryInfo Group
