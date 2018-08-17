@@ -25,6 +25,7 @@ var NAVTREE =
 [
   [ "AiLibrary", "index.html", [
     [ "LICENSE", "d2/d35/md__l_i_c_e_n_s_e.html", null ],
+    [ "Changelog", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html", null ],
     [ "Todo List", "dd/da0/todo.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
@@ -46,7 +47,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"d2/d35/md__l_i_c_e_n_s_e.html"
+"d1/d5b/md__c_h_a_n_g_e_l_o_g.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
