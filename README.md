@@ -29,9 +29,18 @@ to the files you want to upgrade with ai.hh function and set the necessary switc
 
 On Linux you can get Homebrew too! See :beer: :penguin:[Linuxbrew](http://linuxbrew.sh) and use the very same commands to install AiLibrary.
 
-If you are using the [Spancraft](https://snapcraft.io), install with ease by typing `span install ailibrary` and then check `/snap/ailibrary/##/usr/local/include/` for your header.
+If you are using the [Spancraft](https://snapcraft.io), install with ease by typing `span install ailibrary`.
 
-Also we are looking forward to add our package to Spack.
+Also we are looking forward to add our package to [Spack](https://www.spack.io/).
+
+## Documentation
+The docs can be found [here](https://starobinskii.github.io/AiLibrary/docs/). Do not hesitate to contact us by email if you have questions.
+
+## Tests
+
+We have found [Catch2](https://github.com/catchorg/Catch2) pretty useful to test this library. To run the existing tests type `./Scripts/test.sh`.
+
+Do not forget to install the library before testing.
 
 ## Versioning
 
