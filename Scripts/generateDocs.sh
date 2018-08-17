@@ -6,8 +6,6 @@ doxygen ./Scripts/doxygen.html.txt
 
 doxygen ./Scripts/doxygen.xml.txt
 
-moxygen ./xml
-
-mv api.md API.md
+moxygen --output API.md  ./xml
 
 rm -rf ./xml
