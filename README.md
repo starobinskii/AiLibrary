@@ -21,20 +21,24 @@ But try not to forget that with great power comes great responsibility. :smile:
 #include <ai>
 ```
 
-to the files you want to upgrade with ai.hh function and set the necessary switches to enable C++11 (e. g., `-std=c++11` for GCC and Clang).
+to the files you want to upgrade with ai.hh functions and set the necessary switches to enable C++11 (e. g., `-std=c++11` for GCC and Clang).
 
 ### Package Managers
 
 :beer: If you are using OS X and [Homebrew](https://brew.sh), just type `brew tap starobinskii/AiLibrary` and `brew install AiLibrary` and you're set. If you want the bleeding edge rather than the latest release, use `brew install AiLibrary --HEAD`.
 
-On Linux you can get Homebrew too! See :beer: :penguin:[Linuxbrew](http://linuxbrew.sh) and use the very same commands to install AiLibrary.
+On Linux you can get Homebrew too! See :beer::penguin:[Linuxbrew](http://linuxbrew.sh) and use the very same commands to install AiLibrary.
 
 If you are using the [Spancraft](https://snapcraft.io), install with ease by typing `span install ailibrary`.
 
 Also we are looking forward to add our package to [Spack](https://www.spack.io/).
 
 ## Documentation
-The docs can be found [here](https://starobinskii.github.io/AiLibrary/docs/). Do not hesitate to contact us by email if you have questions.
+The docs can be found [here](https://starobinskii.github.io/AiLibrary/docs/) (created using [Doxygen](http://www.doxygen.nl). Do not hesitate to contact us by email `dev@ailurus.ru` if you have questions.
+
+For the list of available functions you can alse see the [API.md](API.md) (created using [Doxygen](http://www.doxygen.nl) and [Moxygen](https://github.com/sourcey/moxygen)).
+
+For changes between versions see the [CHANGELOG.md](CHANGELOG.md).
 
 ## Tests
 
