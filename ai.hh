@@ -1,4 +1,5 @@
-#pragma once
+#if !defined(AILIBRARY_HH)
+#define AILIBRARY_HH
 
 /// \file ai.hh
 /// \author Egor Starobinskii
@@ -13,9 +14,12 @@
 /// \see https://ailurus.ru/
 
 /// \brief If defined, funstions will be marked as inline. 
-/// \details If defined, funstions will be marked as inline. Delete the line, 
+/// \details If defined, funstions will be marked as inline. Delete the line 
 /// if you want to omit this behavior.
 #define INLINE inline
+
+/// \todo add
+//#define DIRENT_SUPPORT
 
 #include <array>
 #include <cmath>
@@ -34,11 +38,12 @@
 #include <stdexcept>
 #include <sys/stat.h>
 
-#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
-    #include "Include/dirent/dirent.h"
-#else
+
+#if defined(DIRENT_SUPPORT)
     #include <dirent.h>
+    //#include "Include/dirent/dirent.h"
 #endif
+
 
 /// \namespace ai
 /// \brief Main namespace
@@ -59,7 +64,7 @@ namespace ai{
     /// \details This function returns version of the AiLibrary (we use SemVer)
     /// \return Version as a string
     INLINE std::string getVersion(){
-        return "1.2.0";
+        return "1.2.1";
     }
 
     /// \} End of LibraryInfo Group
@@ -203,7 +208,7 @@ namespace ai{
     /// \param value The non-negative  value to which the counter should be 
     /// reset (optional)
     /// \return Counter value
-    INLINE std::size_t counter(std::size_t value = 0){
+    INLINE std::size_t counter(const std::size_t value = 0){
         static std::size_t count = 0;
 
         ++count;
@@ -223,7 +228,7 @@ namespace ai{
     /// \param value The non-negative  value to which the counter should be 
     /// reset (optional)
     /// \return Marker string
-    INLINE std::string marker(std::size_t value = 0){
+    INLINE std::string marker(const std::size_t value = 0){
         static std::size_t count = 0;
 
         ++count;
@@ -240,7 +245,7 @@ namespace ai{
     /// \details This function calls marker() and prints result to stdout
     /// \param value The non-negative  value to which the counter should be 
     /// reset (optional)
-    INLINE void printMarker(std::size_t value = 0){
+    INLINE void printMarker(const std::size_t value = 0){
         std::cout << marker(value) << std::endl;
     }
 
@@ -254,11 +259,11 @@ namespace ai{
 
     /// \fn T sign(const T value);
     /// \brief Returns signum of the value
-    /// \details This function returns signum of the value (usign copysign())
+    /// \details This function returns signum of the number value (usign
+    /// copysign())
     /// \param value The number to which signum is applied
     /// \return -1 for negative values, +1 for positive, 0 for zero
     /// \tparam T A number type
-    /// \todo Add tests
     template<typename T>
     INLINE T sign(const T value){
         if(0 == value){
@@ -275,7 +280,6 @@ namespace ai{
     /// \param b Second number
     /// \return Minimum of two values
     /// \tparam T A number type
-    /// \todo Add tests
     template<typename T>
     INLINE T min(const T a, const T b){
         if(a > b){
@@ -292,7 +296,6 @@ namespace ai{
     /// \param b Second number
     /// \return Maximum of two values
     /// \tparam T A number type
-    /// \todo Add tests
     template<typename T>
     INLINE T max(const T a, const T b){
         if(a < b){
@@ -411,7 +414,8 @@ namespace ai{
         return 0 < matrix.size() && matrix.size() == matrix[0].size();
     }
 
-    /// \todo Add description. Add tests. Check for real or int
+    /// \todo Add description. Add tests. Check for real or int. Change 
+    /// srand (ai::time?). Rename max and min
     template<typename T>
     INLINE void generateRandomVector(
         std::vector<T> &vector,
@@ -436,7 +440,7 @@ namespace ai{
 
     /// \todo Add description. Add tests
     template<typename T>
-    INLINE void generateRandomMatrix(
+    INLINE void  generateRandomMatrix(
         std::vector< std::vector<T> > &matrix,
         const std::size_t xSize,
         const std::size_t ySize,
@@ -521,6 +525,71 @@ namespace ai{
         }
     }
 
+    /// \todo add
+    void createCirculantMatrix(
+        std::vector< std::vector<double> > &matrix,
+        std::vector<double> &source,
+        const bool moveToTheRight = true
+    ){
+        if(1 > source.size()){
+            throw std::runtime_error(
+                ai::string("Exception while creating a circulant: ")
+                + ai::string("size of the sources should be at least 1.") 
+            );
+        }
+
+        std::size_t length = source.size();
+
+        std::size_t displacement = 0;
+
+        matrix.clear();
+        matrix.resize(length);
+
+        if(moveToTheRight){
+            for(std::size_t i = 0; i < length; ++i){
+                matrix[i].resize(length);
+
+                std::size_t k = displacement;
+
+                for(std::size_t j = 0; j < length - displacement; ++j){
+                    matrix[i][k] = source[j];
+
+                    ++k;
+                }
+
+                k = 0;
+
+                for(std::size_t j = length - displacement; j < length; ++j){
+                    matrix[i][k] = source[j];
+
+                    ++k;
+                }
+
+                ++displacement;
+            }
+        }else{
+            for(std::size_t i = 0; i < length; ++i){
+                matrix[i].resize(length);
+
+                std::size_t k = 0;
+
+                for(std::size_t j = displacement; j < length; ++j){
+                    matrix[i][k] = source[j];
+
+                    ++k;
+                }
+
+                for(std::size_t j = 0; j < displacement; ++j){
+                    matrix[i][k] = source[j];
+
+                    ++k;
+                }
+                
+                ++displacement;
+            }
+        }
+    }
+
     /// \} End of MathFunctions Group
 
     /// \defgroup TimeFunctions Time Functions
@@ -544,13 +613,13 @@ namespace ai{
     /// std::string scale = std::string("ms"));
     /// \brief Returns the difference between two time points
     /// \details This function returns the difference between two time points 
-    /// in seconds, milliseconds or microseconds using std::chrono (handy to
-    /// measure functions and code blocks)
+    /// in hours, minutes, seconds, milliseconds, microseconds or nanoseconds 
+    /// using std::chrono (handy to measure functions and code blocks)
     /// \param start Time point
     /// \param finish Time point
-    /// \param scale Optional. If \p scale equals to "s", function will return 
-    /// difference in seconds. If \p scale equals to "us" – in microseconds. 
-    /// Otherwise – in microseconds.
+    /// \param scale Optional. By default function will return difference in 
+    /// milliseconds. Set \p scale to "h" for hours, "m" for minutes, "s" for 
+    /// seconds, "us" for microseconds, "ns" for nanoseconds
     /// \return Difference between points
     /// \todo Add tests
     INLINE double duration(
@@ -558,6 +627,16 @@ namespace ai{
         const std::chrono::high_resolution_clock::time_point finish,
         const std::string scale = std::string("ms")
     ){
+        if(std::string("h") == scale){
+            return (double) std::chrono::duration_cast
+                <std::chrono::hours> (finish - start).count();
+        }
+
+        if(std::string("m") == scale){
+            return (double) std::chrono::duration_cast
+                <std::chrono::minutes> (finish - start).count();
+        }
+
         if(std::string("s") == scale){
             return (double) std::chrono::duration_cast
                 <std::chrono::seconds> (finish - start).count();
@@ -568,10 +647,34 @@ namespace ai{
                 <std::chrono::microseconds> (finish - start).count();
         }
 
+        if(std::string("ns") == scale){
+            return (double) std::chrono::duration_cast
+                <std::chrono::nanoseconds> (finish - start).count();
+        }
+
         return (double) std::chrono::duration_cast
             <std::chrono::milliseconds> (finish - start).count();
     }
 
+    inline void printDuration(
+        const std::chrono::high_resolution_clock::time_point start,
+        const std::chrono::high_resolution_clock::time_point finish,
+        const std::string scale = std::string("ms"),
+        const std::size_t count = 0
+    ){
+        std::cout << "Timer #" << counter(count) << ": " 
+            << ai::duration(start, finish, scale) << scale << std::endl;
+    }
+
+    inline void printDuration(
+        const std::chrono::high_resolution_clock::time_point start,
+        const std::string scale = std::string("ms"),
+        const std::size_t count = 0
+    ){
+        std::chrono::high_resolution_clock::time_point finish = ai::time();
+
+        ai::printDuration(start, ai::time(), scale, count);
+    }
     /// \} End of TimeFunctions Group
 
     /// \defgroup ParameterFunctions Parameter Functions
@@ -747,6 +850,17 @@ namespace ai{
     /// interface
     /// \{
 
+    /// \fn void print(T income);
+    /// \brief Prints variable to the stdout
+    /// \details This function prints variable to the stdout with a forwarding
+    /// newline symbol
+    /// \param income Variable to print
+    /// \todo Add tests
+    template<typename T>
+    INLINE void print(const T income){
+        std::cout << ai::string(income) << std::endl;
+    }
+
     /// \fn void showProgressBar(double progress, const std::size_t 
     /// screenWidth = 80);
     /// \brief Prints a simple progress-bar to stdout
@@ -757,7 +871,7 @@ namespace ai{
     /// \exception std::runtime_error If \p screenWidth is less than 20
     INLINE void showProgressBar(
         double progress,
-        const std::size_t screenWidth = 80
+        const int screenWidth = 80
     ){
         if(1 < progress){
             progress = 1;
@@ -800,7 +914,7 @@ namespace ai{
     /// \exception std::runtime_error If \p screenWidth is less than 20
     INLINE void printLine(
         const std::string line,
-        const std::size_t screenWidth = 80
+        const int screenWidth = 80
     ){
         if(20 > screenWidth){
             throw std::runtime_error(
@@ -978,12 +1092,10 @@ namespace ai{
     /// \todo Add description. Add tests
     template<typename T>
     INLINE void printMatrix(
-        const std::vector<std::vector <T> > matrix,
+        std::vector<std::vector <T> > &matrix,
+        const bool transpose = false,
         const int precision = 5
     ){
-        std::cout << std::scientific;
-        std::cout.precision(precision);
-
         if(1 > matrix.size()){
             throw std::runtime_error(
                 ai::string("Exception while printing the matrix: ")
@@ -991,28 +1103,51 @@ namespace ai{
             );
         }
 
-        std::cout << "Matrix[" << matrix.size()
-            << "x" << matrix[0].size() << "] = {" << std::endl;
-        
-        for(const std::vector<T> &vector : matrix){
-            std::size_t lastIndex = vector.size() - 1;
+        std::cout << std::scientific;
+        std::cout.precision(precision);
 
-            for(std::size_t i = 0; i < lastIndex; ++i){
-                std::cout << vector[i] << ", ";
+        std::cout << "Matrix[" << matrix.size() << "x" << matrix[0].size() 
+            << "] = {" << std::endl;
+
+        if(transpose){
+            for(std::size_t j = 0; j < matrix[0].size(); ++j){
+                const std::size_t lastIndex = matrix.size() - 1;
+
+                for(std::size_t i = 0; i < lastIndex; ++i){
+                    std::cout << matrix[i][j] << ", ";
+                }
+
+                std::cout << matrix[lastIndex][j] << std::endl;
             }
-            std::cout << vector[lastIndex] << std::endl;
+        }else{
+            for(std::size_t i = 0; i < matrix.size(); ++i){
+                const std::size_t lastIndex = matrix[i].size() - 1;
+
+                for(std::size_t j = 0; j < lastIndex; ++j){
+                    std::cout << matrix[i][j] << ", ";
+                }
+
+                std::cout << matrix[i][lastIndex] << std::endl;
+            }
         }
 
-        std::cout << "}[" << matrix.size() 
-            << "x" << matrix[0].size() << "]" << std::endl;
+        std::cout << "}[" << matrix.size() << "x" << matrix[0].size() 
+            << "]" << std::endl;
     }
 
     /// \todo Add description. Add tests
     template<typename T>
     INLINE void printVector(
-        const std::vector<T> vector,
+        std::vector<T> &vector,
         const int precision = 5
     ){
+        if(1 > vector.size()){
+            throw std::runtime_error(
+                ai::string("Exception while printing the vector: ")
+                + ai::string("size should be at least 1.") 
+            );
+        }
+
         std::size_t lastIndex = vector.size() - 1;
 
         std::cout << std::scientific;
@@ -1040,7 +1175,8 @@ namespace ai{
     template<typename T>
     INLINE void saveMatrix(
         const std::string filename,
-        const std::vector<std::vector <T> > matrix,
+        std::vector<std::vector <T> > &matrix,
+        const bool transpose = false,
         std::string comment = std::string(),
         std::string type = std::string("text"),
         std::string delimiter = std::string(" "),
@@ -1082,19 +1218,58 @@ namespace ai{
 
         output << prefix;
 
-        for(const std::vector<T> &row : matrix){
-            output << prefix;
+        if(transpose){
+            for(std::size_t j = 0; j < matrix[0].size(); ++j){
+                output << prefix;
             
-            const std::size_t lastIndex = row.size() - 1;
+                const std::size_t lastIndex = matrix.size() - 1;
 
-            for(std::size_t i = 0; i < lastIndex; ++i){
-                output << std::setw(tokenWidth) << row[i] << delimiter;
+                for(std::size_t i = 0; i < lastIndex; ++i){
+                    output << std::setw(tokenWidth) << matrix[i][j] 
+                        << delimiter;
+                }
+
+                output << std::setw(tokenWidth) << matrix[lastIndex][j] 
+                    << suffix << std::endl;
             }
+       }else{
+            for(std::size_t i = 0; i < matrix.size(); ++i){
+                output << prefix;
+            
+                const std::size_t lastIndex = matrix[i].size() - 1;
 
-            output << std::setw(tokenWidth) << row[lastIndex] << suffix << std::endl;
+                for(std::size_t j = 0; j < lastIndex; ++j){
+                    output << std::setw(tokenWidth) << matrix[i][j] 
+                        << delimiter;
+                }
+
+                output << std::setw(tokenWidth) << matrix[i][lastIndex] 
+                    << suffix << std::endl;
+            }
         }
         
         output << suffix;
+    }
+
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE void saveMatrix(
+        const std::string filename,
+        std::vector<std::vector <T> > &matrix,
+        std::string comment = std::string(),
+        std::string type = std::string("text"),
+        std::string delimiter = std::string(" "),
+        const std::size_t tokenWidth = 14
+    ){
+        ai::saveMatrix(
+            filename,
+            matrix,
+            false,
+            comment,
+            type,
+            delimiter,
+            tokenWidth
+        );
     }
 
     /// \todo Add description. Add tests
@@ -1216,6 +1391,7 @@ namespace ai{
         a3r.write("a3r\0", 4);
         a3r.write((char*) &integerNumberOfParticles, intSize);
         a3r.write((char*) &startByte, intSize);
+        ///\TODO print version
         a3r.write("AiLib 1.1.0\0", 12);
         a3r.write((char*) &radius, doubleSize);
         a3r.write((char*) &futureValue, intSize);
@@ -1258,7 +1434,13 @@ namespace ai{
     /// \details Group of functions that checks and analyzes folders and files
     /// \{
 
-    /// \todo Add description. Add tests
+    /// \fn bool folderExists(const std::string name);
+    /// \brief Checks if folder exists
+    /// \details This function checks if the given directory actually 
+    /// exists
+    /// \param name Path to the folder
+    /// \return True if folder exists, false otherwise
+    /// \todo Add tests
     INLINE bool folderExists(const std::string name){
         struct stat buffer;
 
@@ -1296,32 +1478,37 @@ namespace ai{
         return count;
     }
 
-    /// \todo Add description. Add tests
-    INLINE std::vector<std::string> listFilesWithExtension(
-        const std::string path,
-        const std::string extension,
-        const std::string prefix = std::string()
-    ){
-        DIR *dir;
+    #if defined(DIRENT_SUPPORT)
+        /// \todo Add description. Add tests
+        INLINE std::vector<std::string> listFilesWithExtension(
+            const std::string path,
+            const std::string extension,
+            const std::string prefix = std::string()
+        ){
+            DIR *dir;
 
-        struct dirent *ent;
+            struct dirent *ent;
 
-        dir = opendir(path.c_str());
+            dir = opendir(path.c_str());
 
-        std::vector<std::string> files;
+            std::vector<std::string> files;
 
-        if(NULL != dir){
-            while(NULL != (ent = readdir (dir))){
-                if(DT_REG == ent->d_type && hasSuffix(ent->d_name, extension)){
-                    files.push_back(prefix + ent->d_name);
+            if(NULL != dir){
+                while(NULL != (ent = readdir (dir))){
+                    if(
+                        DT_REG == ent->d_type 
+                        && hasSuffix(ent->d_name, extension)
+                    ){
+                        files.push_back(prefix + ent->d_name);
+                    }
                 }
+
+                closedir(dir);
             }
 
-            closedir(dir);
+            return files;
         }
-
-        return files;
-    }
+    #endif
 
     /// \} End of FileFunctions Group
 
@@ -1366,6 +1553,114 @@ namespace ai{
 #if defined AI_FUTURE
     /// \brief Functions to be added in future releases
     namespace ai{
+        inline void getWiseElement2(
+            std::vector< std::vector<double> > &a,
+            std::vector< std::vector<double> > &b,
+            std::vector< std::vector<double> > &c
+        ){
+            std::size_t length = a.size();
+    
+            for(std::size_t i = 0; i < length; ++i){
+                c[i][0] = a[i][0] * b[i][0] - a[i][1] * b[i][1];
+                c[i][1] = a[i][0] * b[i][1] + a[i][1] * b[i][0];
+            }
+        }
+
+        inline void conjugate2(std::vector< std::vector<double> > &vector){
+            std::size_t length = vector.size();
+    
+            for(std::size_t i = 0; i < length; ++i){
+                vector[i][1] = -vector[i][1];
+            }
+        }
+
+        inline void fft2(std::vector< std::vector<double> > &vector){
+            std::size_t k = vector.size();
+            std::size_t j = 0;
+            std::size_t n = 0;
+    
+            const double length = (double) k;
+    
+            double thetaT = 3.14159265358979 / length;
+            double swap0 = 0.;
+            double swap1 = 0.;
+            double T0 = 1.;
+            double T1 = 0.;
+            double phiT0 = cos(thetaT);
+            double phiT1 = -sin(thetaT);
+    
+            while(1 < k){
+                n = k;
+        
+                k >>= 1;
+        
+                swap0 = phiT0;
+                swap1 = phiT1;
+        
+                phiT0 = swap0 * swap0 - swap1 * swap1;
+                phiT1 = 2. * swap0 * swap1;
+        
+                T0 = 1.;
+                T1 = 0.;
+        
+                for(std::size_t l = 0; l < k; ++l){
+                    for(std::size_t i = l; i < length; i += n){
+                        j = i + k;
+                
+                        swap0 = vector[i][0] - vector[j][0];
+                        swap1 = vector[i][1] - vector[j][1];
+                
+                        vector[i][0] += vector[j][0];
+                        vector[i][1] += vector[j][1];
+                
+                        vector[j][0] = swap0 * T0 - swap1 * T1;
+                        vector[j][1] = swap0 * T1 + swap1 * T0;
+                    }
+            
+                    swap0 = T0;
+            
+                    T0 = swap0 * phiT0 - T1 * phiT1;
+                    T1 = swap0 * phiT1 + T1 * phiT0;
+                }
+            }
+    
+            std::size_t m = (std::size_t) log2(length);
+    
+            for(std::size_t i = 0; i < length; ++i){
+                j = i;
+        
+                j = (((j & 0xaaaaaaaa) >> 1) | ((j & 0x55555555) << 1));
+                j = (((j & 0xcccccccc) >> 2) | ((j & 0x33333333) << 2));
+                j = (((j & 0xf0f0f0f0) >> 4) | ((j & 0x0f0f0f0f) << 4));
+                j = (((j & 0xff00ff00) >> 8) | ((j & 0x00ff00ff) << 8));
+                j = ((j >> 16) | (j << 16)) >> (32 - m);
+        
+                if(j > i){
+                    swap0 = vector[i][0];
+                    swap1 = vector[i][1];
+            
+                    vector[i][0] = vector[j][0];
+                    vector[i][1] = vector[j][1];
+            
+                    vector[j][0] = swap0;
+                    vector[j][1] = swap1;
+                }
+            }
+        }
+
+        inline void ifft2(std::vector< std::vector<double> > &vector){
+            const double length = (double) vector.size();
+    
+            conjugate2(vector);
+    
+            fft2(vector);
+    
+            for(std::size_t i = 0; i < length; ++i){
+                vector[i][0] /= length;
+            }
+        }
+        
+        
         INLINE bool createFolder(const std::string name);
 
         template<typename T>
@@ -1426,4 +1721,6 @@ namespace ai{
             std::vector<T> &result,
         );
     }
+#endif
+
 #endif
