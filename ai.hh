@@ -20,6 +20,7 @@
 
 /// \todo add
 //#define DIRENT_SUPPORT
+//#define SHELL_SUPPORT
 
 #include <array>
 #include <cmath>
@@ -1512,41 +1513,43 @@ namespace ai{
 
     /// \} End of FileFunctions Group
 
-    /// \defgroup ShellFunctions Shell Functions
-    /// \brief Functions providing shell support
-    /// \details Group of functions that will help you to interact with shell
-    /// and other programs
-    /// \{
+    #if defined(SHELL_SUPPORT)
+        /// \defgroup ShellFunctions Shell Functions
+        /// \brief Functions providing shell support
+        /// \details Group of functions that will help you to interact with shell
+        /// and other programs
+        /// \{
 
-    /// \todo Add description. Add tests. Add more options to bufferSize
-    INLINE std::string execute(
-        const std::string command
-    ){
-        const std::size_t bufferSize = 128;
+        /// \todo Add description. Add tests. Add more options to bufferSize
+        INLINE std::string execute(
+            const std::string command
+        ){
+            const std::size_t bufferSize = 128;
 
-        std::array<char, bufferSize> buffer;
+            std::array<char, bufferSize> buffer;
 
-        std::string result;
+            std::string result;
 
-        std::shared_ptr<FILE> pipe(popen(command.c_str(), "r"), pclose);
+            std::shared_ptr<FILE> pipe(popen(command.c_str(), "r"), pclose);
 
-        if(!pipe){
-            throw std::runtime_error(
-                ai::string("Exception while executing the command: ")
-                + command
-            );
-        }
-
-        while(!feof(pipe.get())){
-            if(nullptr != fgets(buffer.data(), bufferSize, pipe.get())){
-                result += buffer.data();
+            if(!pipe){
+                throw std::runtime_error(
+                    ai::string("Exception while executing the command: ")
+                    + command
+                );
             }
+
+            while(!feof(pipe.get())){
+                if(nullptr != fgets(buffer.data(), bufferSize, pipe.get())){
+                    result += buffer.data();
+                }
+            }
+
+            return result;
         }
 
-        return result;
-    }
-
-    /// \} End of Shell Functions Group
+        /// \} End of Shell Functions Group
+    #endif
 }
 /// \} End of Main Group
 
