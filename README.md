@@ -21,7 +21,7 @@ But try not to forget that with great power comes great responsibility. :smile:
 #include <ai>
 ```
 
-to the files you want to upgrade with ai.hh functions and set the necessary switches to enable C++11 (e. g., `-std=c++11` for GCC and Clang).
+to the files you want to upgrade with ai.hh functions and set the necessary switches to enable C++11 (e.g., `-std=c++11` for GCC and Clang).
 
 ### Package Managers
 
@@ -34,7 +34,7 @@ If you are using the [Spancraft](https://snapcraft.io), install with ease by typ
 Also we are looking forward to add our package to [Spack](https://www.spack.io/).
 
 ## Documentation
-The docs can be found [here](https://starobinskii.github.io/AiLibrary/docs/) (created using [Doxygen](http://www.doxygen.nl). Do not hesitate to contact us by email `dev@ailurus.ru` if you have questions.
+The docs can be found [here](https://starobinskii.github.io/AiLibrary/docs/) (created using [Doxygen](http://www.doxygen.nl)). Do not hesitate to contact us by email `dev@ailurus.ru` if you have questions.
 
 For the list of available functions you can alse see the [API.md](API.md) (created using [Doxygen](http://www.doxygen.nl) and [Moxygen](https://github.com/sourcey/moxygen)).
 
