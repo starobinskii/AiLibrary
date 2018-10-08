@@ -21,6 +21,7 @@
 /// \todo add
 //#define DIRENT_SUPPORT
 //#define SHELL_SUPPORT
+//#define AI_FUTURE
 
 #include <array>
 #include <cmath>
@@ -527,7 +528,7 @@ namespace ai{
     }
 
     /// \todo add
-    void createCirculantMatrix(
+    INLINE void createCirculantMatrix(
         std::vector< std::vector<double> > &matrix,
         std::vector<double> &source,
         const bool moveToTheRight = true
@@ -674,7 +675,7 @@ namespace ai{
     ){
         std::chrono::high_resolution_clock::time_point finish = ai::time();
 
-        ai::printDuration(start, ai::time(), scale, count);
+        ai::printDuration(start, finish, scale, count);
     }
     /// \} End of TimeFunctions Group
 
@@ -851,6 +852,19 @@ namespace ai{
     /// interface
     /// \{
 
+    ///isatty()
+    std::string black("\033[30m");
+    std::string red("\033[31m");
+    std::string green("\033[32m");
+    std::string yellow("\033[33m");
+    std::string blue("\033[34m");
+    std::string magenta("\033[35m");
+    std::string cyan("\033[36m");
+    std::string white("\033[37m");
+    std::string bold("\033[1m");
+    std::string underline("\033[4m");
+    std::string reset("\033[0m");
+
     /// \fn void print(T income);
     /// \brief Prints variable to the stdout
     /// \details This function prints variable to the stdout with a forwarding
@@ -860,6 +874,87 @@ namespace ai{
     template<typename T>
     INLINE void print(const T income){
         std::cout << ai::string(income) << std::endl;
+    }
+
+    template<typename T>
+    INLINE void printStyle(const T income, const std::string style){
+        std::cout << style << ai::string(income) << ai::reset << std::endl;
+    }
+    template<typename T>
+    INLINE void printBlack(const T income){
+        ai::printStyle(income, ai::black);
+    }
+    template<typename T>
+    INLINE void printRed(const T income){
+        ai::printStyle(income, ai::red);
+    }
+    template<typename T>
+    INLINE void printGreen(const T income){
+        ai::printStyle(income, ai::green);
+    }
+    template<typename T>
+    INLINE void printYellow(const T income){
+        ai::printStyle(income, ai::yellow);
+    }
+    template<typename T>
+    INLINE void printBlue(const T income){
+        ai::printStyle(income, ai::blue);
+    }
+    template<typename T>
+    INLINE void printMagenta(const T income){
+        ai::printStyle(income, ai::magenta);
+    }
+    template<typename T>
+    INLINE void printCyan(const T income){
+        ai::printStyle(income, ai::cyan);
+    }
+    template<typename T>
+    INLINE void printWhite(const T income){
+        ai::printStyle(income, ai::white);
+    }
+    template<typename T>
+    INLINE void printBold(const T income){
+        ai::printStyle(income, ai::bold);
+    }
+    template<typename T>
+    INLINE void printUnderline(const T income){
+        ai::printStyle(income, ai::underline);
+    }
+    ///isatty()
+    INLINE void printAllStyles(){
+        auto printStyleTest = [](
+            const std::string color,
+            const std::string colorName
+        ) -> void{
+            std::cout << colorName << ": " << color << "normal, " << ai::bold
+                << "bold " << ai::reset
+                << color << " and " << ai::underline << "underline" 
+                << ai::reset
+                << color << "." << ai::reset
+                << std::endl;
+        };
+
+        ai::printStyleTest(ai::black, "Black");
+        ai::printStyleTest(ai::red, "Red");
+        ai::printStyleTest(ai::green, "Green");
+        ai::printStyleTest(ai::yellow, "Yellow");
+        ai::printStyleTest(ai::blue, "Blue");
+        ai::printStyleTest(ai::magenta, "Magenta");
+        ai::printStyleTest(ai::cyan, "Cyan");
+        ai::printStyleTest(ai::white, "White");
+    }
+    INLINE void cleanStyles(){
+        ai::black = std::string();
+        ai::red = std::string();
+        ai::green = std::string();
+        ai::yellow = std::string();
+        ai::blue = std::string();
+        ai::magenta = std::string();
+        ai::cyan = std::string();
+        ai::white = std::string();
+        ai::bold = std::string();
+        ai::underline = std::string();
+        ai::reset = std::string();
     }
 
     /// \fn void showProgressBar(double progress, const std::size_t 
@@ -1254,27 +1349,6 @@ namespace ai{
 
     /// \todo Add description. Add tests
     template<typename T>
-    INLINE void saveMatrix(
-        const std::string filename,
-        std::vector<std::vector <T> > &matrix,
-        std::string comment = std::string(),
-        std::string type = std::string("text"),
-        std::string delimiter = std::string(" "),
-        const std::size_t tokenWidth = 14
-    ){
-        ai::saveMatrix(
-            filename,
-            matrix,
-            false,
-            comment,
-            type,
-            delimiter,
-            tokenWidth
-        );
-    }
-
-    /// \todo Add description. Add tests
-    template<typename T>
     INLINE void saveVector(
         const std::string filename,
         const std::vector <T> vector,
@@ -1556,6 +1630,12 @@ namespace ai{
 #if defined AI_FUTURE
     /// \brief Functions to be added in future releases
     namespace ai{
+
+        
+        
+        
+        
+        
         inline void getWiseElement2(
             std::vector< std::vector<double> > &a,
             std::vector< std::vector<double> > &b,
