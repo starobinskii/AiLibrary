@@ -110,12 +110,12 @@ namespace ai{
     /// \param suffix Your substring
     /// \return True if string ends with a substring, false otherwise
     INLINE bool hasSuffix(const std::string &text, const std::string &suffix){
-        return text.size() >= suffix.size() &&
-            text.compare(
+        return text.size() >= suffix.size() 
+            && 0 == text.compare(
                 text.size() - suffix.size(), 
                 suffix.size(), 
                 suffix
-            ) == 0;
+            );
     }
 
     /// \fn bool contains(const std::string &text, const std::string 
@@ -934,14 +934,14 @@ namespace ai{
                 << std::endl;
         };
 
-        ai::printStyleTest(ai::black, "Black");
-        ai::printStyleTest(ai::red, "Red");
-        ai::printStyleTest(ai::green, "Green");
-        ai::printStyleTest(ai::yellow, "Yellow");
-        ai::printStyleTest(ai::blue, "Blue");
-        ai::printStyleTest(ai::magenta, "Magenta");
-        ai::printStyleTest(ai::cyan, "Cyan");
-        ai::printStyleTest(ai::white, "White");
+        printStyleTest(ai::black, "Black");
+        printStyleTest(ai::red, "Red");
+        printStyleTest(ai::green, "Green");
+        printStyleTest(ai::yellow, "Yellow");
+        printStyleTest(ai::blue, "Blue");
+        printStyleTest(ai::magenta, "Magenta");
+        printStyleTest(ai::cyan, "Cyan");
+        printStyleTest(ai::white, "White");
     }
     INLINE void cleanStyles(){
         ai::black = std::string();
@@ -1068,6 +1068,8 @@ namespace ai{
 
             matrix.push_back(row);
         }
+
+        input.close();
     }
 
     /// \todo Add description. Add tests
@@ -1113,6 +1115,8 @@ namespace ai{
                 }
             }
         }
+
+        input.close();
     }
 
     /// \todo Add description. Add tests
@@ -1132,6 +1136,8 @@ namespace ai{
         std::ostringstream stream;
         stream << input.rdbuf();
         content = stream.str();
+
+        input.close();
     }
 
     /// \todo Add description. Add tests
@@ -1343,8 +1349,10 @@ namespace ai{
                     << suffix << std::endl;
             }
         }
-        
+
         output << suffix;
+
+        output.close();
     }
 
     /// \todo Add description. Add tests
@@ -1399,6 +1407,8 @@ namespace ai{
         }
 
         output << vector[lastIndex] << suffix;
+
+        output.close();
     }
 
     /// \todo Add description. Add tests
@@ -1422,6 +1432,8 @@ namespace ai{
         }
 
         output << line;
+
+        output.close();
     }
 
     /// \todo Add description. Add tests
@@ -1549,6 +1561,8 @@ namespace ai{
                 }
             }
         }
+
+        input.close();
 
         return count;
     }
