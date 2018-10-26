@@ -3,6 +3,7 @@
 [![Build Status](https://semaphoreci.com/api/v1/starobinskii/ailibrary/branches/development/shields_badge.svg)](https://semaphoreci.com/starobinskii/ailibrary)
 [![Snap Status](https://build.snapcraft.io/badge/starobinskii/AiLibrary.svg)](https://build.snapcraft.io/user/starobinskii/AiLibrary)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2039/badge)](https://bestpractices.coreinfrastructure.org/projects/2039)
+[![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/starobinskii/AiLibrary.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/starobinskii/AiLibrary/context:cpp)
 [![Release](https://img.shields.io/github/release/starobinskii/AiLibrary.svg)](https://github.com/starobinskii/AiLibrary/releases/latest)
 [![License](https://img.shields.io/github/license/starobinskii/AiLibrary.svg)](https://github.com/starobinskii/AiLibrary/blob/master/LICENSE)
 [![Size](https://img.shields.io/github/size/starobinskii/AiLibrary/ai.hh.svg)](https://github.com/starobinskii/AiLibrary/blob/master/ai.hh)
