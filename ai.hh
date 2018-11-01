@@ -19,6 +19,10 @@
 #define INLINE inline
 
 /// \todo add
+#define STRINGIFY(x) #x
+#define TO_STRING(x) STRINGIFY(x)
+
+/// \todo add
 //#define DIRENT_SUPPORT
 //#define SHELL_SUPPORT
 //#define AI_FUTURE
@@ -1020,7 +1024,8 @@ namespace ai{
             );
         }
         
-        std::cout << "\r" << std::setw(screenWidth) << std::left << line << std::endl;
+        std::cout << "\r" << std::setw(screenWidth) << std::left << line 
+            << std::endl;
     }
 
     /// \} End of InterfaceFunctions Group
