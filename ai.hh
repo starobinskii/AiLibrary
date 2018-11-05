@@ -420,7 +420,21 @@ namespace ai{
         return 0 < matrix.size() && matrix.size() == matrix[0].size();
     }
 
-    /// \todo Add description. Add tests. Check for real or int. Change 
+
+
+    /// \fn void generateRandomVector(std::vector<T> &vector,
+    /// const std::size_t length, 
+    /// const T min = std::numeric_limits<T>::min(),
+    /// const T max = std::numeric_limits<T>::max());
+    /// \brief Fills vector with random values
+    /// \details This function fills vector with random values in the 
+    /// set range.
+    /// \param vector Vector to fill
+    /// \param length Desired vector size
+    /// \param min Minimum possible value
+    /// \param max Maximum possible value
+    /// \tparam T A vector element type
+    /// \todo Add tests. Check for real or int. Change 
     /// srand (ai::time?). Rename max and min
     template<typename T>
     INLINE void generateRandomVector(
