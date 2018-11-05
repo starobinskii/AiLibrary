@@ -856,6 +856,7 @@ namespace ai{
     /// interface
     /// \{
 
+    #if defined(SHELL_SUPPORT)
     ///isatty()
     std::string black("\033[30m");
     std::string red("\033[31m");
@@ -960,6 +961,8 @@ namespace ai{
         ai::underline = std::string();
         ai::reset = std::string();
     }
+
+    #endif
 
     /// \fn void showProgressBar(double progress, const std::size_t 
     /// screenWidth = 80);
