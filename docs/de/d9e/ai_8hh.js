@@ -1,5 +1,8 @@
 var ai_8hh =
 [
+    [ "AI_DIRENT_SUPPORT", "de/d9e/ai_8hh.html#a08ab4858c793965290f01379fdce3260", null ],
+    [ "AI_GCC5_SUPPORT", "de/d9e/ai_8hh.html#a24ab0b03c9edebe84cc71e1afccc1acb", null ],
+    [ "AI_SHELL_SUPPORT", "de/d9e/ai_8hh.html#a6c539823cbc5afcffc0db69070e04adf", null ],
     [ "INLINE", "de/d9e/ai_8hh.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116", null ],
     [ "PRINT_LINE", "d1/dec/group___macros_group.html#ga1e1e978a9034dcad8231ac096f9a4902", null ],
     [ "STRINGIFY", "d1/dec/group___macros_group.html#ga6df1d22fb5f09eccc23b9f399670cfd7", null ],
@@ -29,6 +32,7 @@ var ai_8hh =
     [ "duration", "de/d9e/ai_8hh.html#ga2093a6b79f8831e98746f31c6cd66d5c", null ],
     [ "duration", "de/d9e/ai_8hh.html#gac39f52c9c5983eba7db340a5469eaa83", null ],
     [ "equal", "de/d9e/ai_8hh.html#gab125482b04497d2b9d7880cdfd51ccff", null ],
+    [ "execute", "de/d9e/ai_8hh.html#ga92245db9096637e0aae3d8dcd77a4d3f", null ],
     [ "fft", "de/d9e/ai_8hh.html#ga46e87531b41eba547be604d1e34b7b27", null ],
     [ "folderExists", "de/d9e/ai_8hh.html#gabdca7c6a359e842551fa1fd59511d95b", null ],
     [ "generateCirculantMatrix", "de/d9e/ai_8hh.html#ga27a6217153189fe16cf421ab3fe07ca8", null ],
@@ -47,6 +51,7 @@ var ai_8hh =
     [ "inverseMatrix", "de/d9e/ai_8hh.html#gada879df08132090166f65118ae8ca81e", null ],
     [ "isSquare", "de/d9e/ai_8hh.html#gac521d17c2aff565fbc375f2f9c611dcd", null ],
     [ "isSquare", "de/d9e/ai_8hh.html#gaa78e52e15c1e9c7de3243ad6791ea8e2", null ],
+    [ "listFilesWithExtension", "de/d9e/ai_8hh.html#gaf94066defcee711b34d5cc712585840b", null ],
     [ "loadA3R", "de/d9e/ai_8hh.html#gaa7fb8088fb5f4ee8be91230cdf349191", null ],
     [ "loadXYZ", "de/d9e/ai_8hh.html#gae9ab360f2c606513c0c7760ce8952c01", null ],
     [ "magenta", "de/d9e/ai_8hh.html#ga79ac3cbc99ea2004650b1f146b7ca594", null ],

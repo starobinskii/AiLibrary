@@ -9,6 +9,7 @@ var searchData=
   ['savevector',['saveVector',['../d3/d61/group___save_functions.html#ga197b81a404c6975ae1723bdbf09631e8',1,'ai']]],
   ['savexyz',['saveXYZ',['../d3/d61/group___save_functions.html#gada3dd60c5633f7c05ca8220fc442a648',1,'ai::saveXYZ(const std::string filename, const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;matrix, const std::vector&lt; T &gt; &amp;tones, std::string elementName=&quot;C&quot;)'],['../d3/d61/group___save_functions.html#gab5f2ddd8b0db956871224880ec9986b7',1,'ai::saveXYZ(const std::string filename, const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;matrix, std::string elementName=&quot;C&quot;)']]],
   ['setlocale',['setLocale',['../d2/dbc/group___interface_functions.html#ga1f7fff63e38f3ce8ccc98f3a47c42a1c',1,'ai']]],
+  ['shell_20functions',['Shell Functions',['../d9/d59/group___shell_functions.html',1,'']]],
   ['showprogressbar',['showProgressBar',['../d2/dbc/group___interface_functions.html#ga1763f8f8d0df5cae7fbf79e18a0d20c3',1,'ai']]],
   ['sign',['sign',['../d5/d12/group___math_functions.html#ga59e445549490377e66c6c2719b65cc0e',1,'ai']]],
   ['string',['string',['../d4/d65/group___string_functions.html#gac77e5243b1f905e34f4e34214ebc0d47',1,'ai']]],

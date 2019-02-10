@@ -12,5 +12,6 @@ var modules =
     [ "Read Functions", "df/d73/group___read_functions.html", "df/d73/group___read_functions" ],
     [ "Print Functions", "dc/d09/group___print_functions.html", "dc/d09/group___print_functions" ],
     [ "Save Functions", "d3/d61/group___save_functions.html", "d3/d61/group___save_functions" ],
-    [ "File Functions", "df/dae/group___file_functions.html", "df/dae/group___file_functions" ]
+    [ "File Functions", "df/dae/group___file_functions.html", "df/dae/group___file_functions" ],
+    [ "Shell Functions", "d9/d59/group___shell_functions.html", "d9/d59/group___shell_functions" ]
 ];

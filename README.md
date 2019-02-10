@@ -8,7 +8,8 @@
 [![Size](https://img.shields.io/github/size/starobinskii/AiLibrary/ai.hh.svg)](https://github.com/starobinskii/AiLibrary/blob/master/ai.hh)
 [![Language](https://img.shields.io/github/languages/top/starobinskii/AiLibrary.svg)](https://github.com/starobinskii/AiLibrary/search?l=c%2B%2B)
 
-# AiLibrary
+
+# ![AiLibrary logo](logo.png) AiLibrary
 This is a single-header C++ Library from Ailurus Studio that brings you extra time to admire life instead of coding the same functions again and again. :+1:
 
 But try not to forget that with great power comes great responsibility. :smile:
@@ -48,7 +49,7 @@ Do not forget to install the library before testing.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/starobinskii/AiLibrary/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/starobinskii/AiLibrary/tags).
 
 ## Authors
 
