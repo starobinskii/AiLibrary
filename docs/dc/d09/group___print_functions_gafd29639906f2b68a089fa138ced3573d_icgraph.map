@@ -1,0 +1,15 @@
+<map id="ai::reset" name="ai::reset">
+<area shape="rect" id="node2" href="$dc/d09/group___print_functions.html#ga7ff2bacd4f2a9d135b2aafd98bdbe0c4" title="ai::printStyle" alt="" coords="133,228,228,253"/>
+<area shape="rect" id="node13" href="$dc/d09/group___print_functions.html#ga7556924152a0169023770c1bc7483798" title="ai::printAllStyles" alt="" coords="122,277,238,303"/>
+<area shape="rect" id="node14" href="$dc/d09/group___print_functions.html#gad50537e36fafbcbe00e8266d54def15b" title="ai::clearStyles" alt="" coords="128,327,232,352"/>
+<area shape="rect" id="node3" href="$dc/d09/group___print_functions.html#gab6f521475a753414f6bf45078cf48ab5" title="ai::printBlack" alt="" coords="299,5,396,31"/>
+<area shape="rect" id="node4" href="$dc/d09/group___print_functions.html#ga2b4475f05e8cc55937f6e221f405958c" title="ai::printRed" alt="" coords="303,55,392,80"/>
+<area shape="rect" id="node5" href="$dc/d09/group___print_functions.html#ga07fa81a8cb8ab7d421b1a800f94d1081" title="ai::printGreen" alt="" coords="296,104,398,129"/>
+<area shape="rect" id="node6" href="$dc/d09/group___print_functions.html#ga07b54a9f07528dfa7e773d3e3fdff204" title="ai::printYellow" alt="" coords="296,153,399,179"/>
+<area shape="rect" id="node7" href="$dc/d09/group___print_functions.html#ga9fcad4197880190707a92af69c46bc08" title="ai::printBlue" alt="" coords="301,203,393,228"/>
+<area shape="rect" id="node8" href="$dc/d09/group___print_functions.html#gac4e42b689aa599e752e0aea52018e116" title="ai::printMagenta" alt="" coords="289,252,406,277"/>
+<area shape="rect" id="node9" href="$dc/d09/group___print_functions.html#ga78f30d9d4be61d13adcdc82fd5fc2063" title="ai::printCyan" alt="" coords="299,301,395,327"/>
+<area shape="rect" id="node10" href="$dc/d09/group___print_functions.html#gafcfd509b465c49152eafcde8cc34e070" title="ai::printWhite" alt="" coords="298,351,397,376"/>
+<area shape="rect" id="node11" href="$dc/d09/group___print_functions.html#ga25352c4ec3330619999839da9db08d08" title="ai::printBold" alt="" coords="301,400,393,425"/>
+<area shape="rect" id="node12" href="$dc/d09/group___print_functions.html#gacc772a4b5f8d155be9e51a5f281631e5" title="ai::printUnderline" alt="" coords="286,449,408,475"/>
+</map>

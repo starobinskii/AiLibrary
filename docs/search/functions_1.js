@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['contains',['contains',['../d4/d65/group___string_functions.html#ga1a7fafa4ef8edd8b49b461840ca42dd6',1,'ai']]],
-  ['counter',['counter',['../d3/ddf/group___debug_functions.html#gae14b2a823a0d4558fd7c3213ff4d3509',1,'ai']]],
-  ['countlinesinfile',['countLinesInFile',['../df/dae/group___file_functions.html#gadf09232474a3c9e0da8ca89f9a792abe',1,'ai']]]
+  ['black',['black',['../dc/d09/group___print_functions.html#gabfd87c66472aeceefdb7160941151984',1,'ai']]],
+  ['blue',['blue',['../dc/d09/group___print_functions.html#ga01e5278053d7b4fcef7ed016636fda53',1,'ai']]],
+  ['bold',['bold',['../dc/d09/group___print_functions.html#ga5d203a3b01eb3ddd02d16c44a4d0a0ac',1,'ai']]]
 ];

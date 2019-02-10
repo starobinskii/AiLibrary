@@ -2,9 +2,7 @@
 
 rm -rf ./docs
 
-doxygen ./Scripts/doxygen.html.txt
-
-doxygen ./Scripts/doxygen.xml.txt
+doxygen ./Scripts/doxygen.txt
 
 moxygen --output API.md  ./xml
 

@@ -1,7 +1,7 @@
 # AiLibrary
 This is a single-header C++ Library from Ailurus Studio that brings you extra time to admire life instead of coding the same functions again and again.
 
-But try not to forget that with great power comes great responsibility!
+But try not to forget that with great power comes great responsibility.
 
 ## Integration
 
@@ -11,7 +11,7 @@ But try not to forget that with great power comes great responsibility!
 #include <ai>
 ```
 
-to the files you want to upgrade with ai.hh functions and set the necessary switches to enable C++11 (e. g., `-std=c++11` for GCC and Clang).
+to the files you want to upgrade with ai.hh functions and set the necessary switches to enable C++11 (e.g., `-std=c++11` for GCC and Clang).
 
 ### Package Managers
 
@@ -21,12 +21,10 @@ On Linux you can get Homebrew too! See [Linuxbrew](http://linuxbrew.sh) and use 
 
 If you are using the [Spancraft](https://snapcraft.io), install with ease by typing `span install ailibrary`.
 
-Also we are looking forward to add our package to [Spack](https://www.spack.io/).
+Also we are looking forward to add our package to [Spack](https://www.spack.io/) and some other managers.
 
 ## Documentation
-The docs can be found [here](https://starobinskii.github.io/AiLibrary/docs/) (created using [Doxygen](http://www.doxygen.nl). Do not hesitate to contact us by email `dev@ailurus.ru` if you have questions.
-
-For the list of available functions you can alse see the [API.md](https://github.com/starobinskii/AiLibrary/blob/master/API.md) (created using [Doxygen](http://www.doxygen.nl) and [Moxygen](https://github.com/sourcey/moxygen)).
+The docs can be found [here](https://starobinskii.github.io/AiLibrary/docs/) (created using [Doxygen](http://www.doxygen.nl)). Do not hesitate to contact us by email `dev@ailurus.ru` if you have questions.
 
 For changes between versions see the [CHANGELOG.md](CHANGELOG.md).
 
@@ -43,6 +41,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Egor Starobinskii** - *Initial work* - [starobinskii](https://github.com/starobinskii)
+* **Nikita Mushchak** - *Fast Fourier Trasfromt (FFT)* - [NikitaMushchak](https://github.com/NikitaMushchak)
 
 See also the list of [contributors](https://github.com/starobinskii/AiLibrary/contributors) who participated in this project.
 

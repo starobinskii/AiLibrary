@@ -1,0 +1,5 @@
+<map id="ai::printBlue" name="ai::printBlue">
+<area shape="rect" id="node2" href="$dc/d09/group___print_functions.html#ga7ff2bacd4f2a9d135b2aafd98bdbe0c4" title="ai::printStyle" alt="" coords="145,5,240,31"/>
+<area shape="rect" id="node4" href="$dc/d09/group___print_functions.html#ga01e5278053d7b4fcef7ed016636fda53" title="Terminal color code for blue. " alt="" coords="160,55,225,80"/>
+<area shape="rect" id="node3" href="$dc/d09/group___print_functions.html#gafd29639906f2b68a089fa138ced3573d" title="Terminal code to reset special formatting. " alt="" coords="288,5,357,31"/>
+</map>

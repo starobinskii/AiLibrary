@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['equal',['equal',['../d4/d65/group___string_functions.html#gab125482b04497d2b9d7880cdfd51ccff',1,'ai']]],
-  ['execute',['execute',['../d9/d59/group___shell_functions.html#ga92245db9096637e0aae3d8dcd77a4d3f',1,'ai']]]
+  ['duration',['duration',['../dd/dd0/group___time_functions.html#ga2093a6b79f8831e98746f31c6cd66d5c',1,'ai::duration(const std::chrono::high_resolution_clock::time_point start, const std::chrono::high_resolution_clock::time_point finish, const std::string scale=std::string(&quot;ms&quot;))'],['../dd/dd0/group___time_functions.html#gac39f52c9c5983eba7db340a5469eaa83',1,'ai::duration(const std::chrono::high_resolution_clock::time_point start, const std::string scale=std::string(&quot;ms&quot;))']]]
 ];

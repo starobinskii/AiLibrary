@@ -1,0 +1,14 @@
+<map id="ai::printAllStyles" name="ai::printAllStyles">
+<area shape="rect" id="node2" href="$d4/d65/group___string_functions.html#gac77e5243b1f905e34f4e34214ebc0d47" title="Converts input into a string. " alt="" coords="181,5,252,31"/>
+<area shape="rect" id="node3" href="$dc/d09/group___print_functions.html#ga5d203a3b01eb3ddd02d16c44a4d0a0ac" title="Terminal style code for bold. " alt="" coords="184,55,249,80"/>
+<area shape="rect" id="node4" href="$dc/d09/group___print_functions.html#gafd29639906f2b68a089fa138ced3573d" title="Terminal code to reset special formatting. " alt="" coords="182,104,251,129"/>
+<area shape="rect" id="node5" href="$dc/d09/group___print_functions.html#ga097737edf4c47b879ba1d5496491c99f" title="Terminal style code for underline. " alt="" coords="170,153,263,179"/>
+<area shape="rect" id="node6" href="$dc/d09/group___print_functions.html#gabfd87c66472aeceefdb7160941151984" title="Terminal color code for black. " alt="" coords="181,203,252,228"/>
+<area shape="rect" id="node7" href="$dc/d09/group___print_functions.html#gad99c58f6ae82527a3b8b7623aaed1dda" title="Terminal color code for red. " alt="" coords="187,252,246,277"/>
+<area shape="rect" id="node8" href="$dc/d09/group___print_functions.html#ga6ba6ceca5f659cd8eb528255d9a06d89" title="Terminal color code for green. " alt="" coords="180,301,253,327"/>
+<area shape="rect" id="node9" href="$dc/d09/group___print_functions.html#gaafa6d780856c3981c59dff706ab3a779" title="Terminal color code for yellow. " alt="" coords="178,351,255,376"/>
+<area shape="rect" id="node10" href="$dc/d09/group___print_functions.html#ga01e5278053d7b4fcef7ed016636fda53" title="Terminal color code for blue. " alt="" coords="184,400,249,425"/>
+<area shape="rect" id="node11" href="$dc/d09/group___print_functions.html#ga79ac3cbc99ea2004650b1f146b7ca594" title="Terminal color code for magenta. " alt="" coords="171,449,262,475"/>
+<area shape="rect" id="node12" href="$dc/d09/group___print_functions.html#ga009e72aadeaea320f5b4caeaa75ca5cc" title="Terminal color code for cyan. " alt="" coords="183,499,250,524"/>
+<area shape="rect" id="node13" href="$dc/d09/group___print_functions.html#gabec8a45ab6396d631ceb8cb735898db0" title="Terminal color code for white. " alt="" coords="181,548,252,573"/>
+</map>

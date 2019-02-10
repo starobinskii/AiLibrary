@@ -26,13 +26,13 @@ var NAVTREE =
   [ "AiLibrary", "index.html", [
     [ "LICENSE", "d2/d35/md__l_i_c_e_n_s_e.html", null ],
     [ "Changelog", "d1/d5b/md__c_h_a_n_g_e_l_o_g.html", null ],
-    [ "Todo List", "dd/da0/todo.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ]
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -47,7 +47,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"d1/d5b/md__c_h_a_n_g_e_l_o_g.html"
+"d1/d5b/md__c_h_a_n_g_e_l_o_g.html",
+"df/dab/group___parameter_functions.html#ga02eb74222c6c05c9ef731358f3afcc70"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
