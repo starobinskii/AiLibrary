@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AiLibrary
-   &#160;<span id="projectnumber">v1.2.0</span>
+   &#160;<span id="projectnumber">v1.3.0</span>
    </div>
    <div id="projectbrief">A single-header C++ Library from Ailurus Studio</div>
   </td>
@@ -93,12 +93,30 @@ $(document).ready(function(){initNavTree('d1/d5b/md__c_h_a_n_g_e_l_o_g.html','..
 <div class="contents">
 <div class="textblock"><p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and this project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
-<h2><a href="https://github.com/olivierlacan/keep-a-changelog/compare/v1.2.0...HEAD">1.2.0</a> - 2018-08-17</h2>
+<h2><a href="https://github.com/starobinskii/ailibrary/compare/v1.2.0...v1.3.0">1.3.0</a> - 2019-02-10</h2>
 <h3>Added</h3>
 <ul>
-<li>String functions: <code>equal</code>, <code>applyReplace</code>.</li>
-<li>Math functions: <code>isSquare</code>, <code>generateRandomVector</code>, <code>generateRandomMatrix</code>, <code>translateMatrixIntoVector</code>, <code>translateVectorIntoSquareMatrix</code>.</li>
-<li>Parameter function: <code>assignByCheckingParameter</code>.</li>
+<li>Macros: <code>STRINGIFY</code>, <code>TO_STRING</code>, <code>PRINT_LINE</code></li>
+<li>String functions: <code>toUpperCase</code>, <code>toLowerCase</code>, <code>prependNumber</code></li>
+<li>Math functions: <code>e</code>, <code>pi</code>, <code>rotateMatrix</code>, <code>inverseMatrix</code>, <code>generateCirculantMatrix</code>, <code>multiply</code>, <code>multiplyElementWise</code>, <code>multiplyComplexElementWise</code>, <code>complexIntoString</code>, <code>conjugate</code>, <code>fft</code>, <code>ifft</code></li>
+<li>Time functions: <code>systemTime</code>, <code>printDuration</code>, <code>getDateAndTime</code>, <code>getDate</code>, <code>getTime</code></li>
+<li>Interface functions: <code>clearScreen</code>, <code>setLocale</code></li>
+<li>Print functions: <code>print</code>, <code>black</code>, <code>red</code>, <code>green</code>, <code>yellow</code>, <code>blue</code>, <code>magenta</code>, <code>cyan</code>, <code>white</code>, <code>bold</code>, <code>underline</code>, <code>reset</code>, <code>printStyle</code>, <code>printBlack</code>, <code>printRed</code>, <code>printGreen</code>, <code>printYellow</code>, <code>printBlue</code>, <code>printMagenta</code>, <code>printCyan</code>, <code>printWhite</code>, <code>printBold</code>, <code>printUnderline</code>, <code>printAllStyles</code>, <code>clearStyles</code></li>
+<li>Save functions: <code>save</code>, <code>saveLog</code>, <code>loadA3R</code>, <code>loadXYZ</code>, <code>saveXYZ</code></li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Now <code>duration</code> supports hours, minutes and nanoseconds</li>
+<li>The third parameter for <code>saveMatrix</code> is <code>transpose</code> now</li>
+<li>Replace <code>pragma once</code> with <code>if defined</code></li>
+<li>Define special variables to access <code>listFilesWithExtension</code> and <code>execute</code></li>
+</ul>
+<h2><a href="https://github.com/starobinskii/ailibrary/compare/v1.1.0...v1.2.0">1.2.0</a> - 2018-08-17</h2>
+<h3>Added</h3>
+<ul>
+<li>String functions: <code>equal</code>, <code>applyReplace</code></li>
+<li>Math functions: <code>isSquare</code>, <code>generateRandomVector</code>, <code>generateRandomMatrix</code>, <code>translateMatrixIntoVector</code>, <code>translateVectorIntoSquareMatrix</code></li>
+<li>Parameter function: <code>assignByCheckingParameter</code></li>
 <li>Add <code>AI_FUTURE</code> section</li>
 </ul>
 <h3>Changed</h3>
@@ -106,20 +124,20 @@ $(document).ready(function(){initNavTree('d1/d5b/md__c_h_a_n_g_e_l_o_g.html','..
 <li>Change comments to create docs with</li>
 <li>Replaced <code>inline</code> with a defined <code>INLINE</code></li>
 <li>Add <code>INLINE</code> status to all the functions (for now)</li>
-<li>Now <code>printLine</code> throws an exception if screen width is less than 20 just like <code>showProgressBar</code>.</li>
+<li>Now <code>printLine</code> throws an exception if screen width is less than 20 just like <code>showProgressBar</code></li>
 <li>Fix: functions <code>counter</code> and <code>marker</code> no londer increase value right after reset</li>
 </ul>
-<h2><a href="https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.0...v1.2.0">1.1.0</a> - 2018-08-06</h2>
+<h2><a href="https://github.com/starobinskii/ailibrary/compare/v1.0...v1.1.0">1.1.0</a> - 2018-08-06</h2>
 <h3>Added</h3>
 <ul>
-<li><code>min</code> functions to correspond with <code>max</code>.</li>
-<li>Debug functions: <code>counter</code>, <code>marker</code>, <code>printMarker</code>.</li>
-<li>String functions: <code>contains</code>, <code>replace</code>.</li>
-<li>Parameter functions: <code>parseParameter</code>, <code>assignBooleanParameter</code>, <code>assignCharParameter</code>, <code>assignParameter</code>.</li>
-<li>Read functions: <code>parseFileIntoString</code>, <code>accumulateFileInMatrix</code>, <code>accumulateFileInVector</code>.</li>
-<li>Save function: <code>saveA3R</code>.</li>
-<li>File functions: <code>countLinesInFile</code>, <code>listFilesWithExtension</code>.</li>
-<li>Shell function: <code>execute</code>. </li>
+<li><code>min</code> functions to correspond with <code>max</code></li>
+<li>Debug functions: <code>counter</code>, <code>marker</code>, <code>printMarker</code></li>
+<li>String functions: <code>contains</code>, <code>replace</code></li>
+<li>Parameter functions: <code>parseParameter</code>, <code>assignBooleanParameter</code>, <code>assignCharParameter</code>, <code>assignParameter</code></li>
+<li>Read functions: <code>parseFileIntoString</code>, <code>accumulateFileInMatrix</code>, <code>accumulateFileInVector</code></li>
+<li>Save function: <code>saveA3R</code></li>
+<li>File functions: <code>countLinesInFile</code>, <code>listFilesWithExtension</code></li>
+<li>Shell function: <code>execute</code> </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

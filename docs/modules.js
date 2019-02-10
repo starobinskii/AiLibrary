@@ -1,5 +1,6 @@
 var modules =
 [
+    [ "Macros Group", "d1/dec/group___macros_group.html", "d1/dec/group___macros_group" ],
     [ "AiLibrary Namespace", "d6/dd6/group___ai_namespace.html", "d6/dd6/group___ai_namespace" ],
     [ "Library Info", "d5/dd6/group___library_info.html", "d5/dd6/group___library_info" ],
     [ "String Functions", "d4/d65/group___string_functions.html", "d4/d65/group___string_functions" ],

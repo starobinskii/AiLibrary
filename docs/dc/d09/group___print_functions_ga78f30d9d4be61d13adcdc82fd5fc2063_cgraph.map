@@ -1,0 +1,5 @@
+<map id="ai::printCyan" name="ai::printCyan">
+<area shape="rect" id="node2" href="$dc/d09/group___print_functions.html#ga7ff2bacd4f2a9d135b2aafd98bdbe0c4" title="ai::printStyle" alt="" coords="150,5,244,31"/>
+<area shape="rect" id="node4" href="$dc/d09/group___print_functions.html#ga009e72aadeaea320f5b4caeaa75ca5cc" title="Terminal color code for cyan. " alt="" coords="163,55,231,80"/>
+<area shape="rect" id="node3" href="$dc/d09/group___print_functions.html#gafd29639906f2b68a089fa138ced3573d" title="Terminal code to reset special formatting. " alt="" coords="292,5,361,31"/>
+</map>

@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['marker',['marker',['../d3/ddf/group___debug_functions.html#ga96824e55a873b5474316326942066d7c',1,'ai']]],
-  ['math_20functions',['Math Functions',['../d5/d12/group___math_functions.html',1,'']]],
-  ['max',['max',['../d5/d12/group___math_functions.html#gab4363f54de7131a1530189fdfb614334',1,'ai::max(const T a, const T b)'],['../d5/d12/group___math_functions.html#ga38d9271ac8875ee2e73f7393e791ad55',1,'ai::max(const std::vector&lt; T &gt; &amp;input)'],['../d5/d12/group___math_functions.html#gac41228d2f55e89ea0cbf721d8ee076ff',1,'ai::max(const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;input)']]],
-  ['min',['min',['../d5/d12/group___math_functions.html#ga4ff9e753d095c1ca70b0ec517b0c919e',1,'ai::min(const T a, const T b)'],['../d5/d12/group___math_functions.html#gab855a677ddeab67056d5316bc95ef683',1,'ai::min(const std::vector&lt; T &gt; &amp;input)'],['../d5/d12/group___math_functions.html#gad56ff7c2618a4cb19a5b451663b42394',1,'ai::min(const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;input)']]]
+  ['library_20info',['Library Info',['../d5/dd6/group___library_info.html',1,'']]],
+  ['license_2emd',['LICENSE.md',['../dd/d79/_l_i_c_e_n_s_e_8md.html',1,'']]],
+  ['listfileswithextension',['listFilesWithExtension',['../df/dae/group___file_functions.html#gaf94066defcee711b34d5cc712585840b',1,'ai']]],
+  ['loada3r',['loadA3R',['../d3/d61/group___save_functions.html#gaa7fb8088fb5f4ee8be91230cdf349191',1,'ai']]],
+  ['loadxyz',['loadXYZ',['../d3/d61/group___save_functions.html#gae9ab360f2c606513c0c7760ce8952c01',1,'ai']]],
+  ['license',['LICENSE',['../d2/d35/md__l_i_c_e_n_s_e.html',1,'']]]
 ];

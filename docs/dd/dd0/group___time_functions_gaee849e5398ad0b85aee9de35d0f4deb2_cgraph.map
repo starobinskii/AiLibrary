@@ -1,0 +1,7 @@
+<map id="ai::printDuration" name="ai::printDuration">
+<area shape="rect" id="node2" href="$dd/dd0/group___time_functions.html#ga54195a75b5598d4078f9f4cc57628f2b" title="Returns current time point. " alt="" coords="194,5,259,31"/>
+<area shape="rect" id="node3" href="$dd/dd0/group___time_functions.html#gafce472052309d5d843fd24a7fcaad589" title="ai::printDuration" alt="" coords="169,55,284,80"/>
+<area shape="rect" id="node4" href="$d3/ddf/group___debug_functions.html#ga5ad831a383f32b3f7f66f1259ff239ee" title="Returns ID starting from zero or the specified value. " alt="" coords="334,29,418,55"/>
+<area shape="rect" id="node5" href="$dd/dd0/group___time_functions.html#ga2093a6b79f8831e98746f31c6cd66d5c" title="ai::duration" alt="" coords="332,79,420,104"/>
+<area shape="rect" id="node6" href="$d4/d65/group___string_functions.html#gac77e5243b1f905e34f4e34214ebc0d47" title="Converts input into a string. " alt="" coords="468,79,539,104"/>
+</map>

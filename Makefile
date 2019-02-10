@@ -24,7 +24,7 @@ HDR = ./ai.hh
 
 MAIN = ./app.out
 
-ifeq ($(PREFIX),)
+ifeq ($(DESTDIR),)
 	PREFIX := /usr/local
 endif
 

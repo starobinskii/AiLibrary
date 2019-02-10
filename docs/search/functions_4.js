@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['folderexists',['folderExists',['../df/dae/group___file_functions.html#ga53c41d1ee4cccd4e3b69243362c82129',1,'ai']]]
+  ['equal',['equal',['../d4/d65/group___string_functions.html#gab125482b04497d2b9d7880cdfd51ccff',1,'ai']]],
+  ['execute',['execute',['../d9/d59/group___shell_functions.html#ga92245db9096637e0aae3d8dcd77a4d3f',1,'ai']]]
 ];

@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AiLibrary
-   &#160;<span id="projectnumber">v1.2.0</span>
+   &#160;<span id="projectnumber">v1.3.0</span>
    </div>
    <div id="projectbrief">A single-header C++ Library from Ailurus Studio</div>
   </td>
@@ -121,6 +121,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gab125482b04497d2b9d7880cdfd51ccff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d9e/ai_8hh.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d65/group___string_functions.html#gab125482b04497d2b9d7880cdfd51ccff">ai::equal</a> (const char *charString, const std::string string1)</td></tr>
 <tr class="memdesc:gab125482b04497d2b9d7880cdfd51ccff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a char string is equal to a std::string.  <a href="../../d4/d65/group___string_functions.html#gab125482b04497d2b9d7880cdfd51ccff">More...</a><br /></td></tr>
 <tr class="separator:gab125482b04497d2b9d7880cdfd51ccff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafa7403264826a98706779d24c37135f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d9e/ai_8hh.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d65/group___string_functions.html#gafa7403264826a98706779d24c37135f7">ai::toUpperCase</a> (std::string input)</td></tr>
+<tr class="memdesc:gafa7403264826a98706779d24c37135f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to upper case.  <a href="../../d4/d65/group___string_functions.html#gafa7403264826a98706779d24c37135f7">More...</a><br /></td></tr>
+<tr class="separator:gafa7403264826a98706779d24c37135f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b0ea59a58d4a8fc91a45a9c6b497900"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d9e/ai_8hh.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d65/group___string_functions.html#ga8b0ea59a58d4a8fc91a45a9c6b497900">ai::toLowerCase</a> (std::string input)</td></tr>
+<tr class="memdesc:ga8b0ea59a58d4a8fc91a45a9c6b497900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to lower case.  <a href="../../d4/d65/group___string_functions.html#ga8b0ea59a58d4a8fc91a45a9c6b497900">More...</a><br /></td></tr>
+<tr class="separator:ga8b0ea59a58d4a8fc91a45a9c6b497900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga558ddc85d7fcebb82d31fdf2f701f24e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga558ddc85d7fcebb82d31fdf2f701f24e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../de/d9e/ai_8hh.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d65/group___string_functions.html#ga558ddc85d7fcebb82d31fdf2f701f24e">ai::prependNumber</a> (const T value, const std::size_t symbolsBeforePoint, const char symbolToPrepend='0')</td></tr>
+<tr class="separator:ga558ddc85d7fcebb82d31fdf2f701f24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Group of functions that allows you to freely manipulate and analyze strings </p>
@@ -336,12 +345,49 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if string ends with a substring, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ga558ddc85d7fcebb82d31fdf2f701f24e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga558ddc85d7fcebb82d31fdf2f701f24e">&#9670;&nbsp;</a></span>prependNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d9e/ai_8hh.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> std::string ai::prependNumber </td>
+          <td>(</td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::size_t&#160;</td>
+          <td class="paramname"><em>symbolsBeforePoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>symbolToPrepend</em> = <code>'0'</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 <div class="dynheader">
-Here is the caller graph for this function:</div>
+Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d4/d65/group___string_functions_ga5ffb87ef7304cf15de933db0ef8dbb5a_icgraph.png" border="0" usemap="#d4/d65/group___string_functions_ga5ffb87ef7304cf15de933db0ef8dbb5a_icgraph" alt=""/></div>
-<map name="d4/d65/group___string_functions_ga5ffb87ef7304cf15de933db0ef8dbb5a_icgraph" id="d4/d65/group___string_functions_ga5ffb87ef7304cf15de933db0ef8dbb5a_icgraph">
-<area shape="rect" id="node2" href="../../df/dae/group___file_functions.html#ga46c6f8665ce9034fa718b3958dcfe123" title="ai::listFilesWithExtension" alt="" coords="147,5,316,31"/>
+<div class="center"><img src="../../d4/d65/group___string_functions_ga558ddc85d7fcebb82d31fdf2f701f24e_cgraph.png" border="0" usemap="#d4/d65/group___string_functions_ga558ddc85d7fcebb82d31fdf2f701f24e_cgraph" alt=""/></div>
+<map name="d4/d65/group___string_functions_ga558ddc85d7fcebb82d31fdf2f701f24e_cgraph" id="d4/d65/group___string_functions_ga558ddc85d7fcebb82d31fdf2f701f24e_cgraph">
+<area shape="rect" id="node2" href="../../d4/d65/group___string_functions.html#gac77e5243b1f905e34f4e34214ebc0d47" title="Converts input into a string. " alt="" coords="195,5,266,31"/>
+<area shape="rect" id="node3" href="../../d3/ddf/group___debug_functions.html#ga5ad831a383f32b3f7f66f1259ff239ee" title="Returns ID starting from zero or the specified value. " alt="" coords="189,55,272,80"/>
 </map>
 </div>
 
@@ -407,7 +453,13 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This function converts your variable into std::string using std::ostringstream </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This function converts your variable into std::string using std::ostringstream </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Any printable type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>Your variable to convert </td></tr>
   </table>
@@ -419,32 +471,121 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d4/d65/group___string_functions_gac77e5243b1f905e34f4e34214ebc0d47_icgraph.png" border="0" usemap="#d4/d65/group___string_functions_gac77e5243b1f905e34f4e34214ebc0d47_icgraph" alt=""/></div>
 <map name="d4/d65/group___string_functions_gac77e5243b1f905e34f4e34214ebc0d47_icgraph" id="d4/d65/group___string_functions_gac77e5243b1f905e34f4e34214ebc0d47_icgraph">
-<area shape="rect" id="node2" href="../../d4/d65/group___string_functions.html#gab125482b04497d2b9d7880cdfd51ccff" title="Checks if a char string is equal to a std::string. " alt="" coords="192,5,263,31"/>
-<area shape="rect" id="node4" href="../../d3/ddf/group___debug_functions.html#ga96824e55a873b5474316326942066d7c" title="Returns a string containing the word &quot;Marker&quot; and its ID. " alt="" coords="187,55,268,80"/>
-<area shape="rect" id="node6" href="../../d5/d12/group___math_functions.html#ga43c134aa8eab9d5edb498016ee891646" title="Transform vector in a square matrix (if possible) " alt="" coords="131,104,324,143"/>
-<area shape="rect" id="node7" href="../../dd/dd0/group___time_functions.html#ga912fcdb43dab89156260759a2fc128d6" title="Returns the difference between two time points. " alt="" coords="184,167,271,192"/>
-<area shape="rect" id="node8" href="../../df/dab/group___parameter_functions.html#ga2d54d56130ff4b251fd09a33c307d924" title="ai::parseParameter" alt="" coords="160,216,295,241"/>
-<area shape="rect" id="node9" href="../../df/dab/group___parameter_functions.html#gaf22400542606a991705af80aacd216e7" title="ai::assignBooleanParameter" alt="" coords="133,265,322,291"/>
-<area shape="rect" id="node10" href="../../df/dab/group___parameter_functions.html#ga02eb74222c6c05c9ef731358f3afcc70" title="ai::assignCharParameter" alt="" coords="143,315,312,340"/>
-<area shape="rect" id="node11" href="../../df/dab/group___parameter_functions.html#ga66fb81eb3a9d18a05eebf2188ebfa7d1" title="ai::assignStringParameter" alt="" coords="140,364,315,389"/>
-<area shape="rect" id="node12" href="../../df/dab/group___parameter_functions.html#ga39965300f2ee700f23af9cfb984a4dab" title="ai::assignParameter" alt="" coords="158,413,298,439"/>
-<area shape="rect" id="node13" href="../../df/dab/group___parameter_functions.html#ga4034a69ed57b29d70857115c16e36074" title="ai::assignAbsDoubleParameter" alt="" coords="125,463,330,488"/>
-<area shape="rect" id="node14" href="../../d2/dbc/group___interface_functions.html#gabb30a31da7b0671b01ffbb94206b4a03" title="Prints a simple progress&#45;bar to stdout. " alt="" coords="155,512,300,537"/>
-<area shape="rect" id="node15" href="../../d2/dbc/group___interface_functions.html#ga6f11920ba7b795a79ada930be98f6214" title="Prints a line with specified width. " alt="" coords="182,561,273,587"/>
-<area shape="rect" id="node16" href="../../df/d73/group___read_functions.html#gae9d45625612ddcd2581e26843f141213" title="ai::parseFileInMatrix" alt="" coords="157,611,298,636"/>
-<area shape="rect" id="node18" href="../../df/d73/group___read_functions.html#ga90ae1cfa3d587cdd7d5cb1db70f2621f" title="ai::parseFileInVector" alt="" coords="156,660,299,685"/>
-<area shape="rect" id="node20" href="../../df/d73/group___read_functions.html#gac8b3d3c1db1973ae2d57265e435d2066" title="ai::parseFileIntoString" alt="" coords="152,709,303,735"/>
-<area shape="rect" id="node21" href="../../dc/d09/group___print_functions.html#gacfdc757b2fffba082e869a7f757b98c1" title="ai::printMatrix" alt="" coords="177,759,278,784"/>
-<area shape="rect" id="node22" href="../../d3/d61/group___save_functions.html#ga5449f1c55c95e463304de13863fcebb1" title="ai::saveMatrix" alt="" coords="176,808,279,833"/>
-<area shape="rect" id="node23" href="../../d3/d61/group___save_functions.html#gadfa0dcf506d109993e759e87c833f836" title="ai::saveVector" alt="" coords="175,857,280,883"/>
-<area shape="rect" id="node24" href="../../d3/d61/group___save_functions.html#gaa2e0414f205aea2097386fb41d146a61" title="ai::saveLine" alt="" coords="181,907,274,932"/>
-<area shape="rect" id="node25" href="../../d3/d61/group___save_functions.html#gac5228a4f8019bb3deceb503e0e03a678" title="ai::saveA3R" alt="" coords="181,956,274,981"/>
-<area shape="rect" id="node26" href="../../df/dae/group___file_functions.html#gadf09232474a3c9e0da8ca89f9a792abe" title="ai::countLinesInFile" alt="" coords="160,1005,296,1031"/>
-<area shape="rect" id="node27" href="../../d9/d59/group___shell_functions.html#ga92245db9096637e0aae3d8dcd77a4d3f" title="ai::execute" alt="" coords="185,1055,271,1080"/>
-<area shape="rect" id="node3" href="../../df/dab/group___parameter_functions.html#gaca17fe10d6c287a14c243e674df8b87f" title="ai::assignByCheckingParameter" alt="" coords="378,5,589,31"/>
-<area shape="rect" id="node5" href="../../d3/ddf/group___debug_functions.html#ga4f74ef7895220dc9aba06fb6eab6073b" title="Calls marker() and prints result to stdout. " alt="" coords="430,55,537,80"/>
-<area shape="rect" id="node17" href="../../df/d73/group___read_functions.html#ga9ad08eb45ba0cb425d25e8644bc33a69" title="ai::accumulateFileInMatrix" alt="" coords="396,611,572,636"/>
-<area shape="rect" id="node19" href="../../df/d73/group___read_functions.html#ga6dc3993c11c7e8af3c3847b1efbe7a4b" title="ai::accumulateFileInVector" alt="" coords="395,660,573,685"/>
+<area shape="rect" id="node2" href="../../d5/dd6/group___library_info.html#gae81b57260fe20a158b0226ca9b51610e" title="Get version of the library. " alt="" coords="177,5,279,31"/>
+<area shape="rect" id="node3" href="../../d4/d65/group___string_functions.html#gab125482b04497d2b9d7880cdfd51ccff" title="Checks if a char string is equal to a std::string. " alt="" coords="192,55,263,80"/>
+<area shape="rect" id="node5" href="../../d4/d65/group___string_functions.html#ga558ddc85d7fcebb82d31fdf2f701f24e" title="ai::prependNumber" alt="" coords="160,104,295,129"/>
+<area shape="rect" id="node6" href="../../d3/ddf/group___debug_functions.html#ga345351c64f543f9459af2a4449f59cfe" title="Returns a string containing the word &quot;Marker&quot; and its ID. " alt="" coords="187,153,268,179"/>
+<area shape="rect" id="node8" href="../../d5/d12/group___math_functions.html#ga22896aadb82739145e85dfa39290d14b" title="ai::inverseMatrix" alt="" coords="168,203,287,228"/>
+<area shape="rect" id="node10" href="../../d5/d12/group___math_functions.html#ga43c134aa8eab9d5edb498016ee891646" title="Transform vector into a square matrix (if possible) " alt="" coords="131,252,324,291"/>
+<area shape="rect" id="node11" href="../../d5/d12/group___math_functions.html#ga27a6217153189fe16cf421ab3fe07ca8" title="ai::generateCirculantMatrix" alt="" coords="137,315,318,340"/>
+<area shape="rect" id="node12" href="../../d5/d12/group___math_functions.html#ga781cfb9e924621b4e18cb0473366d368" title="ai::complexIntoString" alt="" coords="155,364,301,389"/>
+<area shape="rect" id="node13" href="../../d5/d12/group___math_functions.html#ga46e87531b41eba547be604d1e34b7b27" title="ai::fft" alt="" coords="203,413,253,439"/>
+<area shape="rect" id="node15" href="../../dd/dd0/group___time_functions.html#ga2093a6b79f8831e98746f31c6cd66d5c" title="ai::duration" alt="" coords="184,463,271,488"/>
+<area shape="rect" id="node18" href="../../df/dab/group___parameter_functions.html#ga2d54d56130ff4b251fd09a33c307d924" title="ai::parseParameter" alt="" coords="160,512,295,537"/>
+<area shape="rect" id="node19" href="../../df/dab/group___parameter_functions.html#gaf22400542606a991705af80aacd216e7" title="ai::assignBooleanParameter" alt="" coords="133,561,322,587"/>
+<area shape="rect" id="node20" href="../../df/dab/group___parameter_functions.html#ga02eb74222c6c05c9ef731358f3afcc70" title="ai::assignCharParameter" alt="" coords="143,611,312,636"/>
+<area shape="rect" id="node21" href="../../df/dab/group___parameter_functions.html#ga66fb81eb3a9d18a05eebf2188ebfa7d1" title="ai::assignStringParameter" alt="" coords="140,660,315,685"/>
+<area shape="rect" id="node22" href="../../df/dab/group___parameter_functions.html#ga39965300f2ee700f23af9cfb984a4dab" title="ai::assignParameter" alt="" coords="158,709,298,735"/>
+<area shape="rect" id="node23" href="../../df/dab/group___parameter_functions.html#ga4034a69ed57b29d70857115c16e36074" title="ai::assignAbsDoubleParameter" alt="" coords="125,759,330,784"/>
+<area shape="rect" id="node24" href="../../d2/dbc/group___interface_functions.html#ga1f7fff63e38f3ce8ccc98f3a47c42a1c" title="ai::setLocale" alt="" coords="180,808,276,833"/>
+<area shape="rect" id="node25" href="../../d2/dbc/group___interface_functions.html#ga1763f8f8d0df5cae7fbf79e18a0d20c3" title="ai::showProgressBar" alt="" coords="155,857,300,883"/>
+<area shape="rect" id="node26" href="../../d2/dbc/group___interface_functions.html#ga5a0c49b9088cdfaf6749cdfc7d0a8628" title="ai::printLine" alt="" coords="182,907,273,932"/>
+<area shape="rect" id="node27" href="../../df/d73/group___read_functions.html#gae9d45625612ddcd2581e26843f141213" title="ai::parseFileInMatrix" alt="" coords="157,956,298,981"/>
+<area shape="rect" id="node29" href="../../df/d73/group___read_functions.html#ga90ae1cfa3d587cdd7d5cb1db70f2621f" title="ai::parseFileInVector" alt="" coords="156,1005,299,1031"/>
+<area shape="rect" id="node31" href="../../df/d73/group___read_functions.html#gac8b3d3c1db1973ae2d57265e435d2066" title="ai::parseFileIntoString" alt="" coords="152,1055,303,1080"/>
+<area shape="rect" id="node32" href="../../dc/d09/group___print_functions.html#ga2cfb640704df7c1b859c440482d26ffe" title="ai::printMatrix" alt="" coords="177,1104,278,1129"/>
+<area shape="rect" id="node34" href="../../dc/d09/group___print_functions.html#gaf8a54b522733a2ef8f15be72b715189e" title="ai::printVector" alt="" coords="176,1153,279,1179"/>
+<area shape="rect" id="node36" href="../../dc/d09/group___print_functions.html#ga7556924152a0169023770c1bc7483798" title="ai::printAllStyles" alt="" coords="170,1203,286,1228"/>
+<area shape="rect" id="node37" href="../../dc/d09/group___print_functions.html#gad50537e36fafbcbe00e8266d54def15b" title="ai::clearStyles" alt="" coords="175,1252,280,1277"/>
+<area shape="rect" id="node38" href="../../d3/d61/group___save_functions.html#gae8654153fbe57dfa3c2b5de4f170ecad" title="ai::saveMatrix" alt="" coords="176,1301,279,1327"/>
+<area shape="rect" id="node40" href="../../d3/d61/group___save_functions.html#ga197b81a404c6975ae1723bdbf09631e8" title="ai::saveVector" alt="" coords="175,1351,280,1376"/>
+<area shape="rect" id="node42" href="../../d3/d61/group___save_functions.html#gac4fc9847a1a5f7dfde1fe3e85d114c96" title="ai::saveLine" alt="" coords="181,1400,274,1425"/>
+<area shape="rect" id="node44" href="../../d3/d61/group___save_functions.html#ga63d2d9249c72ac8cfbe020b5d31a7038" title="ai::saveLog" alt="" coords="183,1449,272,1475"/>
+<area shape="rect" id="node45" href="../../d3/d61/group___save_functions.html#gaa7fb8088fb5f4ee8be91230cdf349191" title="ai::loadA3R" alt="" coords="182,1499,273,1524"/>
+<area shape="rect" id="node46" href="../../d3/d61/group___save_functions.html#gac06ef8f071a2e9fd43dfd141ffc587b8" title="ai::saveA3R" alt="" coords="181,1548,274,1573"/>
+<area shape="rect" id="node47" href="../../d3/d61/group___save_functions.html#gae9ab360f2c606513c0c7760ce8952c01" title="ai::loadXYZ" alt="" coords="182,1597,273,1623"/>
+<area shape="rect" id="node48" href="../../d3/d61/group___save_functions.html#gada3dd60c5633f7c05ca8220fc442a648" title="ai::saveXYZ" alt="" coords="181,1647,274,1672"/>
+<area shape="rect" id="node49" href="../../df/dae/group___file_functions.html#gadf09232474a3c9e0da8ca89f9a792abe" title="ai::countLinesInFile" alt="" coords="160,1696,296,1721"/>
+<area shape="rect" id="node50" href="../../d9/d59/group___shell_functions.html#ga92245db9096637e0aae3d8dcd77a4d3f" title="ai::execute" alt="" coords="185,1745,271,1771"/>
+<area shape="rect" id="node4" href="../../df/dab/group___parameter_functions.html#gaca17fe10d6c287a14c243e674df8b87f" title="ai::assignByCheckingParameter" alt="" coords="378,55,589,80"/>
+<area shape="rect" id="node7" href="../../d3/ddf/group___debug_functions.html#ga9c430bdce23c1a7e9c9d9de3ce6b4b38" title="Calls marker() and prints result to stdout. " alt="" coords="430,153,537,179"/>
+<area shape="rect" id="node9" href="../../d5/d12/group___math_functions.html#gada879df08132090166f65118ae8ca81e" title="ai::inverseMatrix" alt="" coords="425,203,543,228"/>
+<area shape="rect" id="node14" href="../../d5/d12/group___math_functions.html#gaf04c96b76dd1bceb79fecf325838604b" title="ai::ifft" alt="" coords="457,413,510,439"/>
+<area shape="rect" id="node16" href="../../dd/dd0/group___time_functions.html#gac39f52c9c5983eba7db340a5469eaa83" title="ai::duration" alt="" coords="440,463,527,488"/>
+<area shape="rect" id="node17" href="../../dd/dd0/group___time_functions.html#gafce472052309d5d843fd24a7fcaad589" title="ai::printDuration" alt="" coords="426,512,541,537"/>
+<area shape="rect" id="node28" href="../../df/d73/group___read_functions.html#ga9ad08eb45ba0cb425d25e8644bc33a69" title="ai::accumulateFileInMatrix" alt="" coords="396,956,572,981"/>
+<area shape="rect" id="node30" href="../../df/d73/group___read_functions.html#ga6dc3993c11c7e8af3c3847b1efbe7a4b" title="ai::accumulateFileInVector" alt="" coords="395,1005,573,1031"/>
+<area shape="rect" id="node33" href="../../dc/d09/group___print_functions.html#ga65fd54001ef1807b57d277ce02342320" title="ai::print" alt="" coords="451,1104,516,1129"/>
+<area shape="rect" id="node35" href="../../dc/d09/group___print_functions.html#gadd02d38ccafa18ef83b6c4b8cb3c0e6d" title="ai::print" alt="" coords="451,1153,516,1179"/>
+<area shape="rect" id="node39" href="../../d3/d61/group___save_functions.html#gaef81b7961fc1be246f6e4a8eb6d1ca49" title="ai::save" alt="" coords="450,1301,517,1327"/>
+<area shape="rect" id="node41" href="../../d3/d61/group___save_functions.html#ga8975beceb2982ba69ff101e880378d39" title="ai::save" alt="" coords="450,1351,517,1376"/>
+<area shape="rect" id="node43" href="../../d3/d61/group___save_functions.html#gaa3e574e06eec5c52773e36dde3054750" title="ai::save" alt="" coords="450,1400,517,1425"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga8b0ea59a58d4a8fc91a45a9c6b497900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8b0ea59a58d4a8fc91a45a9c6b497900">&#9670;&nbsp;</a></span>toLowerCase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ai::toLowerCase </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This function converts the given string to lower case and returns the result </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>String to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Lowercase string </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d65/group___string_functions_ga8b0ea59a58d4a8fc91a45a9c6b497900_icgraph.png" border="0" usemap="#d4/d65/group___string_functions_ga8b0ea59a58d4a8fc91a45a9c6b497900_icgraph" alt=""/></div>
+<map name="d4/d65/group___string_functions_ga8b0ea59a58d4a8fc91a45a9c6b497900_icgraph" id="d4/d65/group___string_functions_ga8b0ea59a58d4a8fc91a45a9c6b497900_icgraph">
+<area shape="rect" id="node2" href="../../d2/dbc/group___interface_functions.html#ga1f7fff63e38f3ce8ccc98f3a47c42a1c" title="ai::setLocale" alt="" coords="171,5,267,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gafa7403264826a98706779d24c37135f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafa7403264826a98706779d24c37135f7">&#9670;&nbsp;</a></span>toUpperCase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ai::toUpperCase </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This function converts the given string to upper case and returns the result </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>String to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Uppercase string </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d65/group___string_functions_gafa7403264826a98706779d24c37135f7_icgraph.png" border="0" usemap="#d4/d65/group___string_functions_gafa7403264826a98706779d24c37135f7_icgraph" alt=""/></div>
+<map name="d4/d65/group___string_functions_gafa7403264826a98706779d24c37135f7_icgraph" id="d4/d65/group___string_functions_gafa7403264826a98706779d24c37135f7_icgraph">
+<area shape="rect" id="node2" href="../../d2/dbc/group___interface_functions.html#ga1f7fff63e38f3ce8ccc98f3a47c42a1c" title="ai::setLocale" alt="" coords="171,5,267,31"/>
 </map>
 </div>
 

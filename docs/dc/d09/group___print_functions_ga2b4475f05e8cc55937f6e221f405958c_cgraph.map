@@ -1,0 +1,5 @@
+<map id="ai::printRed" name="ai::printRed">
+<area shape="rect" id="node2" href="$dc/d09/group___print_functions.html#ga7ff2bacd4f2a9d135b2aafd98bdbe0c4" title="ai::printStyle" alt="" coords="143,5,238,31"/>
+<area shape="rect" id="node4" href="$dc/d09/group___print_functions.html#gad99c58f6ae82527a3b8b7623aaed1dda" title="Terminal color code for red. " alt="" coords="161,55,219,80"/>
+<area shape="rect" id="node3" href="$dc/d09/group___print_functions.html#gafd29639906f2b68a089fa138ced3573d" title="Terminal code to reset special formatting. " alt="" coords="286,5,354,31"/>
+</map>
