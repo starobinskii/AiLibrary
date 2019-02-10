@@ -25,6 +25,12 @@
 // /// header below
 // #define AI_DIRENT_SUPPORT
 
+// /// \brief If defined, functions requiring GCC v5+ will be included
+// /// \details If defined, functions requiring GCC v5+ will be included.
+// /// Uncomment the line or pass the defined value at compile time if you want
+// /// this behavior.
+// #define AI_GCC5_SUPPORT
+
 // /// \brief If defined, functions requiring UNIX shell will be included
 // /// \details If defined, functions requiring UNIX shell will be included.
 // /// Uncomment the line or pass the defined value at compile time if you want
@@ -1305,72 +1311,77 @@ namespace ai{
         ai::printDuration(start, finish, scale, count);
     }
 
-    /// \fn std::string getDateAndTime(std::chrono::system_clock::time_point 
-    /// timePoint = std::chrono::system_clock::now());
-    /// \brief Get date and time
-    /// \details This function converts the given moment to std::string
-    /// containing the passed date and time 
-    /// \param timePoint Optional. The moment on the system clock to be
-    /// converted, the current time by default
-    /// \return std::string with date and time in the format yyyy.mm.dd 
-    /// HH:MM:SS
-    /// \todo Add tests
-    INLINE std::string getDateAndTime(
-        std::chrono::system_clock::time_point timePoint =
-            std::chrono::system_clock::now()
-    ){
-        std::time_t date = std::chrono::system_clock::to_time_t(timePoint);
+    #if defined(AI_GCC5_SUPPORT)
+        /// \fn std::string getDateAndTime( 
+        /// std::chrono::system_clock::time_point timePoint =
+        /// std::chrono::system_clock::now());
+        /// \brief Get date and time
+        /// \details This function converts the given moment to std::string
+        /// containing the passed date and time 
+        /// \param timePoint Optional. The moment on the system clock to be
+        /// converted, the current time by default
+        /// \return std::string with date and time in the format yyyy.mm.dd 
+        /// HH:MM:SS
+        /// \todo Add tests
+        INLINE std::string getDateAndTime(
+            std::chrono::system_clock::time_point timePoint =
+                std::chrono::system_clock::now()
+        ){
+            std::time_t date = std::chrono::system_clock::to_time_t(timePoint);
 
-        std::ostringstream stream;
+            std::ostringstream stream;
 
-        stream << std::put_time(std::localtime(&date), "%F %T");
+            stream << std::put_time(std::localtime(&date), "%F %T");
 
-        return stream.str();
-    }
+            return stream.str();
+        }
 
-    /// \fn std::string getDate(std::chrono::system_clock::time_point timePoint
-    /// = std::chrono::system_clock::now());
-    /// \brief Get date
-    /// \details This function converts the given moment to std::string
-    /// containing the passed date
-    /// \param timePoint Optional. The moment on the system clock to be
-    /// converted, the current time by default
-    /// \return std::string with date in the format yyyy.mm.dd
-    /// \todo Add tests
-    INLINE std::string getDate(
-        std::chrono::system_clock::time_point timePoint =
-            std::chrono::system_clock::now()
-    ){
-        std::time_t date = std::chrono::system_clock::to_time_t(timePoint);
+        /// \fn std::string getDate(std::chrono::system_clock::time_point 
+        /// timePoint = std::chrono::system_clock::now());
+        /// \brief Get date
+        /// \details This function converts the given moment to std::string
+        /// containing the passed date
+        /// \param timePoint Optional. The moment on the system clock to be
+        /// converted, the current time by default
+        /// \return std::string with date in the format yyyy.mm.dd
+        /// \todo Add tests
+        INLINE std::string getDate(
+            std::chrono::system_clock::time_point timePoint =
+                std::chrono::system_clock::now()
+        ){
+            std::time_t date = std::chrono::system_clock::to_time_t(timePoint);
 
-        std::ostringstream stream;
+            std::ostringstream stream;
 
-        stream << std::put_time(std::localtime(&date), "%F");
+            stream << std::put_time(std::localtime(&date), "%F");
 
-        return stream.str();
-    }
+            return stream.str();
+        }
 
-    /// \fn std::string getTime(std::chrono::system_clock::time_point timePoint
-    /// = std::chrono::system_clock::now());
-    /// \brief Get  time
-    /// \details This function converts the given moment to std::string
-    /// containing the passed time 
-    /// \param timePoint Optional. The moment on the system clock to be
-    /// converted, the current time by default
-    /// \return std::string with date time in the format HH:MM:SS
-    /// \todo Add tests
-    INLINE std::string getTime(
-        std::chrono::system_clock::time_point timePoint =
-            std::chrono::system_clock::now()
-    ){
-        std::time_t date = std::chrono::system_clock::to_time_t(timePoint);
+        /// \fn std::string getTime(std::chrono::system_clock::time_point 
+        /// timePoint = std::chrono::system_clock::now());
+        /// \brief Get  time
+        /// \details This function converts the given moment to std::string
+        /// containing the passed time 
+        /// \param timePoint Optional. The moment on the system clock to be
+        /// converted, the current time by default
+        /// \return std::string with date time in the format HH:MM:SS
+        /// \todo Add tests
+        INLINE std::string getTime(
+            std::chrono::system_clock::time_point timePoint =
+                std::chrono::system_clock::now()
+        ){
+            std::time_t date = std::chrono::system_clock::to_time_t(timePoint);
 
-        std::ostringstream stream;
+            std::ostringstream stream;
 
-        stream << std::put_time(std::localtime(&date), "%T");
+            stream << std::put_time(std::localtime(&date), "%T");
 
-        return stream.str();
-    }
+            return stream.str();
+        }
+
+    #endif
+
     /// \} End of TimeFunctions Group
 
     /// \defgroup ParameterFunctions Parameter Functions
@@ -1562,8 +1573,10 @@ namespace ai{
         }else{
             std::locale::global(
                 std::locale(
-                    ai::toLowerCase(locale) + ai::string("_")
+                    (
+                        ai::toLowerCase(locale) + ai::string("_")
                         + ai::toUpperCase(locale) + ai::string(".utf8")
+                    ).c_str()
                 )
             );
         }
@@ -2285,61 +2298,64 @@ namespace ai{
         ai::saveLine(filename, line, comment);
     }
 
-    /// \exception std::runtime_error If file could not be open
-    /// \todo Add description. Add tests
-    INLINE void saveLog(
-        const std::string filename,
-        std::string log,
-        const bool timestamp = false,
-        const std::string stampSeparator = std::string(" ")
-    ){
-        std::ofstream output(filename, std::ios_base::app);
+    #if defined(AI_GCC5_SUPPORT)
+        /// \exception std::runtime_error If file could not be open
+        /// \todo Add description. Add tests
+        INLINE void saveLog(
+            const std::string filename,
+            std::string log,
+            const bool timestamp = false,
+            const std::string stampSeparator = std::string(" ")
+        ){
+            std::ofstream output(filename, std::ios_base::app);
 
-        if(!output.good()){
-            throw std::runtime_error(
-                ai::string("Exception while saving log into the file: ")
-                + filename
-            );
+            if(!output.good()){
+                throw std::runtime_error(
+                    ai::string("Exception while saving log into the file: ")
+                    + filename
+                );
+            }
+
+            if(timestamp){
+                output << ai::getDateAndTime() << stampSeparator;
+            }
+
+            output << log << std::endl;
+
+            output.close();
         }
 
-        if(timestamp){
-            output << ai::getDateAndTime() << stampSeparator;
+        /// \exception std::runtime_error If file could not be open
+        /// \todo Add description. Add tests
+        INLINE void saveLog(
+            const std::string filename,
+            std::vector<std::string> &logs,
+            const bool timestamp = false,
+            const std::string stampSeparator = std::string(" ")
+        ){
+            std::ofstream output(filename, std::ios_base::app);
+
+            if(!output.good()){
+                throw std::runtime_error(
+                    ai::string("Exception while saving log into the file: ")
+                    + filename
+                );
+            }
+
+            std::string prefix("");
+
+            if(timestamp){
+                prefix = ai::getDateAndTime() + stampSeparator;
+            }
+
+            for(std::size_t i = 0; i < logs.size(); ++i){
+                output << prefix << logs[i] << std::endl;
+            }
+
+            output.close();
         }
 
-        output << log << std::endl;
-
-        output.close();
-    }
-
-    /// \exception std::runtime_error If file could not be open
-    /// \todo Add description. Add tests
-    INLINE void saveLog(
-        const std::string filename,
-        std::vector<std::string> &logs,
-        const bool timestamp = false,
-        const std::string stampSeparator = std::string(" ")
-    ){
-        std::ofstream output(filename, std::ios_base::app);
-
-        if(!output.good()){
-            throw std::runtime_error(
-                ai::string("Exception while saving log into the file: ")
-                + filename
-            );
-        }
-
-        std::string prefix("");
-
-        if(timestamp){
-            prefix = ai::getDateAndTime() + stampSeparator;
-        }
-
-        for(std::size_t i = 0; i < logs.size(); ++i){
-            output << prefix << logs[i] << std::endl;
-        }
-
-        output.close();
-    }
+    #endif
 
     /// \tparam T A number type
     /// \exception std::runtime_error If file could not be open
