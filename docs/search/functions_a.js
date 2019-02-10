@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['parsefileinmatrix',['parseFileInMatrix',['../df/d73/group___read_functions.html#gae9d45625612ddcd2581e26843f141213',1,'ai']]],
-  ['parsefileintostring',['parseFileIntoString',['../df/d73/group___read_functions.html#gac8b3d3c1db1973ae2d57265e435d2066',1,'ai']]],
-  ['parsefileinvector',['parseFileInVector',['../df/d73/group___read_functions.html#ga90ae1cfa3d587cdd7d5cb1db70f2621f',1,'ai']]],
-  ['parseparameter',['parseParameter',['../df/dab/group___parameter_functions.html#ga2d54d56130ff4b251fd09a33c307d924',1,'ai']]],
-  ['printline',['printLine',['../d2/dbc/group___interface_functions.html#ga6f11920ba7b795a79ada930be98f6214',1,'ai']]],
-  ['printmarker',['printMarker',['../d3/ddf/group___debug_functions.html#ga4f74ef7895220dc9aba06fb6eab6073b',1,'ai']]],
-  ['printmatrix',['printMatrix',['../dc/d09/group___print_functions.html#gacfdc757b2fffba082e869a7f757b98c1',1,'ai']]],
-  ['printvector',['printVector',['../dc/d09/group___print_functions.html#gad94bd2a44c60fbbbf17dfa5fa0a61f4e',1,'ai']]]
+  ['magenta',['magenta',['../dc/d09/group___print_functions.html#ga79ac3cbc99ea2004650b1f146b7ca594',1,'ai']]],
+  ['marker',['marker',['../d3/ddf/group___debug_functions.html#ga345351c64f543f9459af2a4449f59cfe',1,'ai']]],
+  ['max',['max',['../d5/d12/group___math_functions.html#gab4363f54de7131a1530189fdfb614334',1,'ai::max(const T a, const T b)'],['../d5/d12/group___math_functions.html#ga38d9271ac8875ee2e73f7393e791ad55',1,'ai::max(const std::vector&lt; T &gt; &amp;input)'],['../d5/d12/group___math_functions.html#gac41228d2f55e89ea0cbf721d8ee076ff',1,'ai::max(const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;input)']]],
+  ['min',['min',['../d5/d12/group___math_functions.html#ga4ff9e753d095c1ca70b0ec517b0c919e',1,'ai::min(const T a, const T b)'],['../d5/d12/group___math_functions.html#gab855a677ddeab67056d5316bc95ef683',1,'ai::min(const std::vector&lt; T &gt; &amp;input)'],['../d5/d12/group___math_functions.html#gad56ff7c2618a4cb19a5b451663b42394',1,'ai::min(const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;input)']]],
+  ['multiply',['multiply',['../d5/d12/group___math_functions.html#ga50bf5a5c329516b044d4553f1dce69e5',1,'ai::multiply(const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;left, const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;right, std::vector&lt; std::vector&lt; T &gt; &gt; &amp;result)'],['../d5/d12/group___math_functions.html#ga5aa2e148dcac9b79642b3708a501fc8d',1,'ai::multiply(const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;left, const std::vector&lt; T &gt; &amp;right, std::vector&lt; T &gt; &amp;result)'],['../d5/d12/group___math_functions.html#ga8f0f988a4b13e3b6ad1a6e5d6f4c6f95',1,'ai::multiply(const std::vector&lt; T &gt; &amp;left, const std::vector&lt; T &gt; &amp;right, T &amp;result)']]],
+  ['multiplycomplexelementwise',['multiplyComplexElementWise',['../d5/d12/group___math_functions.html#gae066365ce568fab84880facf6297b67a',1,'ai']]],
+  ['multiplyelementwise',['multiplyElementWise',['../d5/d12/group___math_functions.html#ga8bc34f17df4fc867bf0eee3de8f6aabb',1,'ai::multiplyElementWise(const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;left, const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;right, std::vector&lt; std::vector&lt; T &gt; &gt; &amp;result)'],['../d5/d12/group___math_functions.html#gaea3bca561dbdcd13aaf74531a3649319',1,'ai::multiplyElementWise(const std::vector&lt; T &gt; &amp;left, const std::vector&lt; T &gt; &amp;right, std::vector&lt; T &gt; &amp;result)']]]
 ];

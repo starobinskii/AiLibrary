@@ -1,0 +1,6 @@
+<map id="ai::counter" name="ai::counter">
+<area shape="rect" id="node2" href="$d4/d65/group___string_functions.html#ga558ddc85d7fcebb82d31fdf2f701f24e" title="ai::prependNumber" alt="" coords="137,5,272,31"/>
+<area shape="rect" id="node3" href="$dd/dd0/group___time_functions.html#gafce472052309d5d843fd24a7fcaad589" title="ai::printDuration" alt="" coords="147,55,262,80"/>
+<area shape="rect" id="node5" href="$d3/d61/group___save_functions.html#gae9ab360f2c606513c0c7760ce8952c01" title="ai::loadXYZ" alt="" coords="160,104,250,129"/>
+<area shape="rect" id="node4" href="$dd/dd0/group___time_functions.html#gaee849e5398ad0b85aee9de35d0f4deb2" title="ai::printDuration" alt="" coords="320,55,436,80"/>
+</map>

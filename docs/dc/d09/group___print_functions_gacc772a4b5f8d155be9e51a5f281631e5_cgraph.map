@@ -1,0 +1,5 @@
+<map id="ai::printUnderline" name="ai::printUnderline">
+<area shape="rect" id="node2" href="$dc/d09/group___print_functions.html#ga7ff2bacd4f2a9d135b2aafd98bdbe0c4" title="ai::printStyle" alt="" coords="175,5,270,31"/>
+<area shape="rect" id="node4" href="$dc/d09/group___print_functions.html#ga097737edf4c47b879ba1d5496491c99f" title="Terminal style code for underline. " alt="" coords="176,55,270,80"/>
+<area shape="rect" id="node3" href="$dc/d09/group___print_functions.html#gafd29639906f2b68a089fa138ced3573d" title="Terminal code to reset special formatting. " alt="" coords="318,5,387,31"/>
+</map>

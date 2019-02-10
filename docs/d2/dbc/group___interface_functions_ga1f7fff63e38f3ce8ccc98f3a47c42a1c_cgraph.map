@@ -1,0 +1,5 @@
+<map id="ai::setLocale" name="ai::setLocale">
+<area shape="rect" id="node2" href="$d4/d65/group___string_functions.html#gac77e5243b1f905e34f4e34214ebc0d47" title="Converts input into a string. " alt="" coords="173,5,244,31"/>
+<area shape="rect" id="node3" href="$d4/d65/group___string_functions.html#ga8b0ea59a58d4a8fc91a45a9c6b497900" title="Convert a string to lower case. " alt="" coords="150,55,267,80"/>
+<area shape="rect" id="node4" href="$d4/d65/group___string_functions.html#gafa7403264826a98706779d24c37135f7" title="Convert a string to upper case. " alt="" coords="150,104,267,129"/>
+</map>

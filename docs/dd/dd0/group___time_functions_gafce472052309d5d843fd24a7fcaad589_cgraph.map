@@ -1,0 +1,5 @@
+<map id="ai::printDuration" name="ai::printDuration">
+<area shape="rect" id="node2" href="$d3/ddf/group___debug_functions.html#ga5ad831a383f32b3f7f66f1259ff239ee" title="Returns ID starting from zero or the specified value. " alt="" coords="171,5,254,31"/>
+<area shape="rect" id="node3" href="$dd/dd0/group___time_functions.html#ga2093a6b79f8831e98746f31c6cd66d5c" title="ai::duration" alt="" coords="169,55,256,80"/>
+<area shape="rect" id="node4" href="$d4/d65/group___string_functions.html#gac77e5243b1f905e34f4e34214ebc0d47" title="Converts input into a string. " alt="" coords="304,55,376,80"/>
+</map>

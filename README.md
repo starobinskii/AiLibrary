@@ -31,7 +31,7 @@ On Linux you can get Homebrew too! See :beer::penguin:[Linuxbrew](http://linuxbr
 
 If you are using the [Spancraft](https://snapcraft.io), install with ease by typing `span install ailibrary`.
 
-Also we are looking forward to add our package to [Spack](https://www.spack.io/).
+Also we are looking forward to add our package to [Spack](https://www.spack.io/)  and some other managers.
 
 ## Documentation
 The docs can be found [here](https://starobinskii.github.io/AiLibrary/docs/) (created using [Doxygen](http://www.doxygen.nl)). Do not hesitate to contact us by email `dev@ailurus.ru` if you have questions.
@@ -53,6 +53,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Egor Starobinskii** - *Initial work* - [starobinskii](https://github.com/starobinskii)
+* **Nikita Mushchak** - *Fast Fourier Trasfromt (FFT)* - [NikitaMushchak](https://github.com/NikitaMushchak)
 
 See also the list of [contributors](https://github.com/starobinskii/AiLibrary/contributors) who participated in this project.
 

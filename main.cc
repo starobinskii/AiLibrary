@@ -1,11 +1,8 @@
-#include "ai.hh"
+#include <ai>
 
 int main(){
-    ai::printLine(
-        ai::string("This is AiLibrary v")
-        + ai::getVersion()
-        + ai::string(", welcome!")
-    );
+    std::cout << "This is AiLibrary v" << ai::getVersion() << ", welcome!";
+    std::cout << std::endl;
     
     return 0;
 }

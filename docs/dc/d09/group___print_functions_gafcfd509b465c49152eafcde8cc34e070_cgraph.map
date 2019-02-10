@@ -1,0 +1,5 @@
+<map id="ai::printWhite" name="ai::printWhite">
+<area shape="rect" id="node2" href="$dc/d09/group___print_functions.html#ga7ff2bacd4f2a9d135b2aafd98bdbe0c4" title="ai::printStyle" alt="" coords="152,5,247,31"/>
+<area shape="rect" id="node4" href="$dc/d09/group___print_functions.html#gabec8a45ab6396d631ceb8cb735898db0" title="Terminal color code for white. " alt="" coords="165,55,235,80"/>
+<area shape="rect" id="node3" href="$dc/d09/group___print_functions.html#gafd29639906f2b68a089fa138ced3573d" title="Terminal code to reset special formatting. " alt="" coords="295,5,364,31"/>
+</map>

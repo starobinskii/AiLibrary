@@ -1,0 +1,12 @@
+<map id="ai::printStyle" name="ai::printStyle">
+<area shape="rect" id="node2" href="$dc/d09/group___print_functions.html#gab6f521475a753414f6bf45078cf48ab5" title="ai::printBlack" alt="" coords="160,5,258,31"/>
+<area shape="rect" id="node3" href="$dc/d09/group___print_functions.html#ga2b4475f05e8cc55937f6e221f405958c" title="ai::printRed" alt="" coords="164,55,254,80"/>
+<area shape="rect" id="node4" href="$dc/d09/group___print_functions.html#ga07fa81a8cb8ab7d421b1a800f94d1081" title="ai::printGreen" alt="" coords="158,104,260,129"/>
+<area shape="rect" id="node5" href="$dc/d09/group___print_functions.html#ga07b54a9f07528dfa7e773d3e3fdff204" title="ai::printYellow" alt="" coords="158,153,261,179"/>
+<area shape="rect" id="node6" href="$dc/d09/group___print_functions.html#ga9fcad4197880190707a92af69c46bc08" title="ai::printBlue" alt="" coords="163,203,255,228"/>
+<area shape="rect" id="node7" href="$dc/d09/group___print_functions.html#gac4e42b689aa599e752e0aea52018e116" title="ai::printMagenta" alt="" coords="151,252,268,277"/>
+<area shape="rect" id="node8" href="$dc/d09/group___print_functions.html#ga78f30d9d4be61d13adcdc82fd5fc2063" title="ai::printCyan" alt="" coords="161,301,257,327"/>
+<area shape="rect" id="node9" href="$dc/d09/group___print_functions.html#gafcfd509b465c49152eafcde8cc34e070" title="ai::printWhite" alt="" coords="160,351,259,376"/>
+<area shape="rect" id="node10" href="$dc/d09/group___print_functions.html#ga25352c4ec3330619999839da9db08d08" title="ai::printBold" alt="" coords="163,400,255,425"/>
+<area shape="rect" id="node11" href="$dc/d09/group___print_functions.html#gacc772a4b5f8d155be9e51a5f281631e5" title="ai::printUnderline" alt="" coords="148,449,270,475"/>
+</map>

@@ -10,3 +10,9 @@ compiler:
 before_install:
 script: make
 after_success: ./app.out
+coverity_scan:
+    project:
+      name: "starobinskii/AiLibrary"
+      description: "C++ Library from Ailurus Studio"
+    notification_email: dev@ailurus.ru
+    build_command:   "make CXX=clang++"

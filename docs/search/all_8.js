@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['library_20info',['Library Info',['../d5/dd6/group___library_info.html',1,'']]],
-  ['license_2emd',['LICENSE.md',['../dd/d79/_l_i_c_e_n_s_e_8md.html',1,'']]],
-  ['listfileswithextension',['listFilesWithExtension',['../df/dae/group___file_functions.html#ga46c6f8665ce9034fa718b3958dcfe123',1,'ai']]],
-  ['license',['LICENSE',['../d2/d35/md__l_i_c_e_n_s_e.html',1,'']]]
+  ['ifft',['ifft',['../d5/d12/group___math_functions.html#gaf04c96b76dd1bceb79fecf325838604b',1,'ai']]],
+  ['inline',['INLINE',['../de/d9e/ai_8hh.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116',1,'ai.hh']]],
+  ['interface_20functions',['Interface Functions',['../d2/dbc/group___interface_functions.html',1,'']]],
+  ['inversematrix',['inverseMatrix',['../d5/d12/group___math_functions.html#ga22896aadb82739145e85dfa39290d14b',1,'ai::inverseMatrix(std::vector&lt; std::vector&lt; T &gt; &gt; matrix, std::vector&lt; std::vector&lt; T &gt; &gt; &amp;inverse)'],['../d5/d12/group___math_functions.html#gada879df08132090166f65118ae8ca81e',1,'ai::inverseMatrix(std::vector&lt; std::vector&lt; T &gt; &gt; &amp;matrix)']]],
+  ['issquare',['isSquare',['../d5/d12/group___math_functions.html#gac521d17c2aff565fbc375f2f9c611dcd',1,'ai::isSquare(const T value)'],['../d5/d12/group___math_functions.html#gaa78e52e15c1e9c7de3243ad6791ea8e2',1,'ai::isSquare(const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;matrix)']]]
 ];

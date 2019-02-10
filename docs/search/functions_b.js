@@ -1,4 +1,26 @@
 var searchData=
 [
-  ['replace',['replace',['../d4/d65/group___string_functions.html#gaa3ee3ad75450b355f177173739343c01',1,'ai']]]
+  ['parsefileinmatrix',['parseFileInMatrix',['../df/d73/group___read_functions.html#gae9d45625612ddcd2581e26843f141213',1,'ai']]],
+  ['parsefileintostring',['parseFileIntoString',['../df/d73/group___read_functions.html#gac8b3d3c1db1973ae2d57265e435d2066',1,'ai']]],
+  ['parsefileinvector',['parseFileInVector',['../df/d73/group___read_functions.html#ga90ae1cfa3d587cdd7d5cb1db70f2621f',1,'ai']]],
+  ['parseparameter',['parseParameter',['../df/dab/group___parameter_functions.html#ga2d54d56130ff4b251fd09a33c307d924',1,'ai']]],
+  ['prependnumber',['prependNumber',['../d4/d65/group___string_functions.html#ga558ddc85d7fcebb82d31fdf2f701f24e',1,'ai']]],
+  ['print',['print',['../dc/d09/group___print_functions.html#ga65fd54001ef1807b57d277ce02342320',1,'ai::print(const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;matrix, const bool transpose=false, const int precision=5)'],['../dc/d09/group___print_functions.html#gadd02d38ccafa18ef83b6c4b8cb3c0e6d',1,'ai::print(const std::vector&lt; T &gt; &amp;vector, const int precision=5)'],['../dc/d09/group___print_functions.html#ga220a82c64afd994f2b3df3ec62a191b0',1,'ai::print(const T value, const std::string name=std::string(&quot;Value&quot;))']]],
+  ['printallstyles',['printAllStyles',['../dc/d09/group___print_functions.html#ga7556924152a0169023770c1bc7483798',1,'ai']]],
+  ['printblack',['printBlack',['../dc/d09/group___print_functions.html#gab6f521475a753414f6bf45078cf48ab5',1,'ai']]],
+  ['printblue',['printBlue',['../dc/d09/group___print_functions.html#ga9fcad4197880190707a92af69c46bc08',1,'ai']]],
+  ['printbold',['printBold',['../dc/d09/group___print_functions.html#ga25352c4ec3330619999839da9db08d08',1,'ai']]],
+  ['printcyan',['printCyan',['../dc/d09/group___print_functions.html#ga78f30d9d4be61d13adcdc82fd5fc2063',1,'ai']]],
+  ['printduration',['printDuration',['../dd/dd0/group___time_functions.html#gafce472052309d5d843fd24a7fcaad589',1,'ai::printDuration(const std::chrono::high_resolution_clock::time_point start, const std::chrono::high_resolution_clock::time_point finish, const std::string scale=std::string(&quot;ms&quot;), const std::size_t count=0)'],['../dd/dd0/group___time_functions.html#gaee849e5398ad0b85aee9de35d0f4deb2',1,'ai::printDuration(const std::chrono::high_resolution_clock::time_point start, const std::string scale=std::string(&quot;ms&quot;), const std::size_t count=0)']]],
+  ['printgreen',['printGreen',['../dc/d09/group___print_functions.html#ga07fa81a8cb8ab7d421b1a800f94d1081',1,'ai']]],
+  ['printline',['printLine',['../d2/dbc/group___interface_functions.html#ga5a0c49b9088cdfaf6749cdfc7d0a8628',1,'ai']]],
+  ['printmagenta',['printMagenta',['../dc/d09/group___print_functions.html#gac4e42b689aa599e752e0aea52018e116',1,'ai']]],
+  ['printmarker',['printMarker',['../d3/ddf/group___debug_functions.html#ga9c430bdce23c1a7e9c9d9de3ce6b4b38',1,'ai']]],
+  ['printmatrix',['printMatrix',['../dc/d09/group___print_functions.html#ga2cfb640704df7c1b859c440482d26ffe',1,'ai']]],
+  ['printred',['printRed',['../dc/d09/group___print_functions.html#ga2b4475f05e8cc55937f6e221f405958c',1,'ai']]],
+  ['printstyle',['printStyle',['../dc/d09/group___print_functions.html#ga7ff2bacd4f2a9d135b2aafd98bdbe0c4',1,'ai']]],
+  ['printunderline',['printUnderline',['../dc/d09/group___print_functions.html#gacc772a4b5f8d155be9e51a5f281631e5',1,'ai']]],
+  ['printvector',['printVector',['../dc/d09/group___print_functions.html#gaf8a54b522733a2ef8f15be72b715189e',1,'ai']]],
+  ['printwhite',['printWhite',['../dc/d09/group___print_functions.html#gafcfd509b465c49152eafcde8cc34e070',1,'ai']]],
+  ['printyellow',['printYellow',['../dc/d09/group___print_functions.html#ga07b54a9f07528dfa7e773d3e3fdff204',1,'ai']]]
 ];
