@@ -30,7 +30,7 @@ to the files you want to upgrade with ai.hh functions and set the necessary swit
 
 On Linux you can get Homebrew too! See :beer::penguin:[Linuxbrew](http://linuxbrew.sh) and use the very same commands to install AiLibrary.
 
-If you are using the [Spancraft](https://snapcraft.io), install with ease by typing `span install ailibrary`.
+If you are using the [Snapcraft](https://snapcraft.io), install with ease by typing `snap install ailibrary`.
 
 Also we are looking forward to add our package to [Spack](https://www.spack.io/)  and some other managers.
 
