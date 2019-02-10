@@ -41,7 +41,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Egor Starobinskii** - *Initial work* - [starobinskii](https://github.com/starobinskii)
-* **Nikita Mushchak** - *Fast Fourier Trasfromt (FFT)* - [NikitaMushchak](https://github.com/NikitaMushchak)
+* **Nikita Mushchak** - *Fast Fourier transform (FFT)* - [NikitaMushchak](https://github.com/NikitaMushchak)
 
 See also the list of [contributors](https://github.com/starobinskii/AiLibrary/contributors) who participated in this project.
 
