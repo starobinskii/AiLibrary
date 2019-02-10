@@ -19,7 +19,7 @@ If you are using OS X and [Homebrew](https://brew.sh), just type `brew tap staro
 
 On Linux you can get Homebrew too! See [Linuxbrew](http://linuxbrew.sh) and use the very same commands to install AiLibrary.
 
-If you are using the [Spancraft](https://snapcraft.io), install with ease by typing `span install ailibrary`.
+If you are using the [Snapcraft](https://snapcraft.io), install with ease by typing `snap install ailibrary`.
 
 Also we are looking forward to add our package to [Spack](https://www.spack.io/) and some other managers.
 
