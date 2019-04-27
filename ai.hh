@@ -1119,7 +1119,7 @@ namespace ai{
     INLINE void fft(std::vector< std::vector<T> > &complexVector){
         const std::size_t length = complexVector.size();
 
-        if(2 > length || !(length & (length - 1)) == 0){
+        if(2 > length || (length & (length - 1)) != 0){
             throw std::runtime_error(
                 std::string("Exception while calculating FFT: ")
                     + std::string("vector length must be a power of two.")
