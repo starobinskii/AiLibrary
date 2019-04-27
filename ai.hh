@@ -110,7 +110,7 @@ namespace ai{
     /// \return Version as a string
     /// \see https://semver.org
     INLINE std::string getVersion(){
-        return std::string("1.3.0");
+        return std::string("1.3.1");
     }
 
     /// \} End of LibraryInfo Group
@@ -2774,6 +2774,40 @@ namespace ai{
     namespace ai{
         /// Still looking for a good cross-platform solution
         INLINE bool createFolder(const std::string name);
+        template<typename T>
+        INLINE void fill(std::vector< std::vector<T> > matrix, T value);
+        template<typename T>
+        INLINE void fill(std::vector<T> vector, T value);
+        template<typename T>
+        INLINE void sum(
+            const std::vector< std::vector<T> > &matrix,
+            std::vector<T> &vector
+        );
+        template<typename T>
+        INLINE T sum(const std::vector< std::vector<T> > &matrix);
+        template<typename T>
+        INLINE T sum(const std::vector<T> &vector);
+        template<typename T>
+        INLINE void average(
+            const std::vector< std::vector<T> > &matrix,
+            std::vector<T> &vector
+        );
+        template<typename T>
+        INLINE T average(
+            const std::vector< std::vector<T> > &matrix
+        );
+        template<typename T>
+        INLINE T average(std::vector<T> vector);
+        template<typename T>
+        INLINE void print(
+            const std::vector<T> &vector,
+            const std::string name = "Vector",
+            const int precision = 5
+        );
+        template<typename T>
+        INLINE T getRandomElement(const std::vector< std::vector<T> > &matrix);
+        template<typename T>
+        INLINE T getRandomElement(const std::vector<T> &vector);
     }
 #endif
 
