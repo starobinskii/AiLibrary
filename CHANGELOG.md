@@ -9,6 +9,14 @@ fixed  warning: logical not is only applied to the
       fft
       if (2 > length || !(length & (length - 1)) == 0) {
 
+## [1.3.1] -
+
+### Changed
+- Now `print` functions allow to specify the name of your variable
+
+### Fixed
+- Size check in `fft` could give a warning
+
 ## [1.3.0] - 2019-02-10
 
 ### Added

@@ -3,7 +3,7 @@
 
 /// \file ai.hh
 /// \author Egor Starobinskii
-/// \date 10 Feb 2019
+/// \date 30 Apr 2019
 /// \brief Single-header C++ Library
 /// \details This is a single-header C++ Library from Ailurus Studio that
 /// brings you extra time to admire life instead of coding the same functions
@@ -1829,6 +1829,7 @@ namespace ai{
     template<typename T>
     INLINE void printMatrix(
         const std::vector<std::vector <T> > &matrix,
+        const std::string name = std::string("Matrix"),
         const bool transpose = false,
         const int precision = 5
     ){
@@ -1842,7 +1843,7 @@ namespace ai{
         std::cout << std::scientific;
         std::cout.precision(precision);
 
-        std::cout << "Matrix[" << matrix.size() << "x" << matrix[0].size()
+        std::cout << name << "[" << matrix.size() << "x" << matrix[0].size()
             << "] = {" << std::endl;
 
         if(transpose){
@@ -1876,6 +1877,7 @@ namespace ai{
     template<typename T>
     INLINE void printVector(
         const std::vector<T> &vector,
+        const std::string name = std::string("Vector"),
         const int precision = 5
     ){
         if(1 > vector.size()){
@@ -1890,7 +1892,7 @@ namespace ai{
         std::cout << std::scientific;
         std::cout.precision(precision);
 
-        std::cout << "Vector[" << vector.size() << "] = {" << std::endl;
+        std::cout << name << "[" << vector.size() << "] = {" << std::endl;
 
         for(std::size_t i = 0; i < lastIndex; ++i){
             std::cout << vector[i] << ", ";
@@ -1905,10 +1907,11 @@ namespace ai{
     template<typename T>
     INLINE void print(
         const std::vector<std::vector <T> > &matrix,
+        const std::string name = std::string("Matrix"),
         const bool transpose = false,
         const int precision = 5
     ){
-        ai::printMatrix(matrix, transpose, precision);
+        ai::printMatrix(matrix, name, transpose, precision);
     }
 
     /// \tparam T Any printable type
@@ -1916,9 +1919,10 @@ namespace ai{
     template<typename T>
     INLINE void print(
         const std::vector<T> &vector,
+        const std::string name = std::string("Vector"),
         const int precision = 5
     ){
-        ai::printVector(vector, precision);
+        ai::printVector(vector, name, precision);
     }
 
     /// \tparam T Any printable type
@@ -2779,6 +2783,11 @@ namespace ai{
         template<typename T>
         INLINE void fill(std::vector<T> vector, T value);
         template<typename T>
+        /// Sum matrix and matrix?
+        /// Sum vector and vector?
+        /// negative
+        /// repeat string
+        /// multiply by number
         INLINE void sum(
             const std::vector< std::vector<T> > &matrix,
             std::vector<T> &vector
@@ -2798,12 +2807,6 @@ namespace ai{
         );
         template<typename T>
         INLINE T average(std::vector<T> vector);
-        template<typename T>
-        INLINE void print(
-            const std::vector<T> &vector,
-            const std::string name = "Vector",
-            const int precision = 5
-        );
         template<typename T>
         INLINE T getRandomElement(const std::vector< std::vector<T> > &matrix);
         template<typename T>
