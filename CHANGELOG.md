@@ -4,18 +4,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-fixed  warning: logical not is only applied to the
-      left hand side of this comparison [-Wlogical-not-parentheses]
-      fft
-      if (2 > length || !(length & (length - 1)) == 0) {
+## [1.4.0] - 2019-07
 
-## [1.3.1] -
+Today we pass the 100K symbols mark! (yep, I count comments also, blame me)
+
+### Added
+- Macros: `forN`, `forS`
+- File functions: `fileExists`, `exists`, `isFolder`, `isFile`
+- String functions: `applyRepeat`, `repeat`, `split`, `stringToHex`, `stringFromHex`
+- Math functions: `c`, `g`, `epsilon`, `fill`, `negate`, `sum`, `average`, `round`, `gaussElimination`, `randomReal`, `randomInteger`, `randomIndex`, `random`, `getRandomIndex`, `getRandomElement`
+- Time functions: `sleep`, `getDateAndTime`
+- Print functions: `info`, `warning`, `error`, `redirectCoutToFile`, `restoreCoutFromFile`, `killCout`
 
 ### Changed
 - Now `print` functions allow to specify the name of your variable
+- Use std::mt19937 for `generateRandomVector` and `generateRandomMatrix`
+- Set precision when use `saveMatrix` and `saveVector`
 
 ### Fixed
+- Matrix with different column lengths was killing `saveMatrix` if transposing
+- Empty vector was killing `saveVector`
 - Size check in `fft` could give a warning
+- Properly work with negative values in `prependNumber`
 
 ## [1.3.0] - 2019-02-10
 
@@ -40,14 +50,16 @@ fixed  warning: logical not is only applied to the
 - String functions: `equal`, `applyReplace`
 - Math functions: `isSquare`, `generateRandomVector`, `generateRandomMatrix`, `translateMatrixIntoVector`, `translateVectorIntoSquareMatrix`
 - Parameter function: `assignByCheckingParameter`
-- Add `AI_FUTURE` section
+- `AI_FUTURE` section
 
 ### Changed
 - Change comments to create docs with
-- Replaced `inline` with a defined `INLINE`
+- Replace `inline` with a defined `INLINE`
 - Add `INLINE` status to all the functions (for now)
 - Now `printLine` throws an exception if screen width is less than 20 just like `showProgressBar`
-- Fix: functions `counter` and `marker` no londer increase value right after reset
+
+### Fixed
+- Functions `counter` and `marker` no londer increase value right after reset
 
 ## [1.1.0] - 2018-08-06
 
@@ -61,7 +73,12 @@ fixed  warning: logical not is only applied to the
 - File functions: `countLinesInFile`, `listFilesWithExtension`
 - Shell function: `execute`
 
-[Unreleased]: https://github.com/starobinskii/ailibrary/compare/v1.3.0...HEAD
+## 1.0.0 - 2018-06-24
+
+Original release
+
+[Unreleased]: https://github.com/starobinskii/ailibrary/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/starobinskii/ailibrary/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/starobinskii/ailibrary/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/starobinskii/ailibrary/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/starobinskii/ailibrary/compare/v1.0...v1.1.0

@@ -24,6 +24,8 @@ But try not to forget that with great power comes great responsibility. :smile:
 
 to the files you want to upgrade with ai.hh functions and set the necessary switches to enable C++11 (e.g., `-std=c++11` for GCC and Clang).
 
+On Windows you can use `nmake -f Makefile.win install` if you have [C ++ Build Tools](https://www.microsoft.com/en-us/download/details.aspx?id=48159) already set up.
+
 ### Package Managers
 
 :beer: If you are using OS X and [Homebrew](https://brew.sh), just type `brew tap starobinskii/AiLibrary` and `brew install AiLibrary` and you're set. If you want the bleeding edge rather than the latest release, use `brew install AiLibrary --HEAD`.
@@ -44,8 +46,6 @@ For changes between versions see the [CHANGELOG.md](CHANGELOG.md).
 ## Tests
 
 We have found [Catch2](https://github.com/catchorg/Catch2) pretty useful to test this library. To run the existing tests type `./Scripts/test.sh`.
-
-Do not forget to install the library before testing.
 
 ## Versioning
 

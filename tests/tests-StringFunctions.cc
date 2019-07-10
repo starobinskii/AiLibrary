@@ -52,3 +52,19 @@ TEST_CASE("Check if char array and std::string are equal", "[StringFunctions]"){
     REQUIRE(true == ai::equal(charLine, stringLine));
     REQUIRE(false == ai::equal(charLine, wrongStringLine));
 }
+
+TEST_CASE("Transform string to upper case", "[StringFunctions]"){
+    REQUIRE(std::string("UPPER CASE!") == ai::toUpperCase("Upper cAse!"));
+}
+
+TEST_CASE("Transform string to lower case", "[StringFunctions]"){
+    REQUIRE(std::string("lower case!") == ai::toUpperCase("Lower cAse!"));
+}
+
+TEST_CASE("Convert number to counter-like string", "[StringFunctions]"){
+    REQUIRE(std::string("0003") == ai::prependNumber(3, 4));
+    REQUIRE(std::string("3") == ai::prependNumber(3, -4));
+    REQUIRE(std::string("###3") == ai::prependNumber(3, 4, '#'));
+    REQUIRE(std::string("300") == ai::prependNumber(300, 2));
+    REQUIRE(std::string("-00.3") == ai::prependNumber(-0.3, 5));
+}
