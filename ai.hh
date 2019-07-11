@@ -119,7 +119,7 @@ namespace ai{
     /// \return Version as a string
     /// \see https://semver.org
     INLINE std::string getVersion(){
-        return std::string("1.4.0-alpha");
+        return std::string("1.4.0-alpha.1");
     }
 
     /// \} End of LibraryInfo Group
@@ -2495,7 +2495,7 @@ namespace ai{
         std::string comment = std::string(),
         std::string type = std::string("text"),
         std::string delimiter = std::string("\n"),
-        const std::size_t precision = 6,
+        const std::size_t precision = 6
     ){
         std::string extension("_v.txt");
         std::string prefix("");
@@ -3168,8 +3168,17 @@ namespace ai{
         
         INLINE void info(std::string info){
             if(ai::redirectToFiles){
-                std::ofstream output("./info.txt", std::ofstream::app);
+                std::string filename("./info.txt");
                 
+                std::ofstream output(filename, std::ofstream::app);
+
+                if(!output.good()){
+                    throw std::runtime_error(
+                        ai::string("Exception while printing to the file: ")
+                        + filename
+                    );
+                }
+
                 output << info << std::endl;
             }else{
                 ai::printStyle(info, ai::blue + ai::bold);
@@ -3178,8 +3187,17 @@ namespace ai{
         
         INLINE void warning(std::string warning){
             if(ai::redirectToFiles){
-                std::ofstream output("./warnings.txt", std::ofstream::app);
-                
+                std::string filename("./warnings.txt");
+
+                std::ofstream output(filename, std::ofstream::app);
+
+                if(!output.good()){
+                    throw std::runtime_error(
+                        ai::string("Exception while printing to the file: ")
+                        + filename
+                    );
+                }
+
                 output << warning << std::endl;
             }else{
                 ai::printStyle(warning, ai::yellow + ai::bold);
@@ -3188,8 +3206,17 @@ namespace ai{
         
         INLINE void error(std::string error){
             if(ai::redirectToFiles){
-                std::ofstream output("./errors.txt", std::ofstream::app);
-                
+                std::string filename("./errors.txt");
+
+                std::ofstream output(filename, std::ofstream::app);
+
+                if(!output.good()){
+                    throw std::runtime_error(
+                        ai::string("Exception while printing to the file: ")
+                        + filename
+                    );
+                }
+
                 output << error << std::endl;
             }else{
                 ai::printStyle(error, ai::red + ai::bold);
@@ -3248,15 +3275,22 @@ namespace ai{
             const std::string filename,
             const bool append = true
         ){
-            static std::ofstream file;
+            static std::ofstream output;
     
             if(append){
-                file.open(filename, std::ios_base::app);
+                output.open(filename, std::ios_base::app);
             }else{
-                file.open(filename);
+                output.open(filename);
+            }
+
+            if(!output.good()){
+                throw std::runtime_error(
+                    ai::string("Exception while redirecting to the file: ")
+                    + filename
+                );
             }
     
-            return ai::redirectCoutToFile(file);
+            return ai::redirectCoutToFile(output);
         }
 
         INLINE void restoreCoutFromFile(std::streambuf *buffer){
