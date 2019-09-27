@@ -18,9 +18,9 @@ Today we pass the 100K symbols mark! (yep, I count comments also, blame me)
 
 ### Changed
 - Now `print` functions allow to specify the name of your variable
+- Functions `parseFileInMatrix`, `parseFileInVector`, `accumulateFileInMatrix`, `accumulateFileInVector` allow to skip N first lines when reading a file (comment lines are also counted)
 - Use std::mt19937 for `generateRandomVector` and `generateRandomMatrix`
 - Set precision when use `saveMatrix` and `saveVector`
-
 ### Fixed
 - Matrix with different column lengths was killing `saveMatrix` if transposing
 - Empty vector was killing `saveVector`

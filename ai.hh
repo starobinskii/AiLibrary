@@ -119,7 +119,7 @@ namespace ai{
     /// \return Version as a string
     /// \see https://semver.org
     INLINE std::string getVersion(){
-        return std::string("1.4.0-alpha.1");
+        return std::string("1.4.0-alpha.2");
     }
 
     /// \} End of LibraryInfo Group
@@ -1838,7 +1838,8 @@ namespace ai{
     INLINE void parseFileInMatrix(
         const std::string filename,
         const char separator,
-        std::vector< std::vector<T> > &matrix
+        std::vector< std::vector<T> > &matrix,
+        const int skipLines = 0
     ){
         std::ifstream input(filename);
 
@@ -1854,7 +1855,9 @@ namespace ai{
         T value;
 
         for(std::string line; std::getline(input, line);){
-            if('#' == line[0]){
+            --skipLines;
+
+            if('#' == line[0] || 0 <= skipLines){
                 continue;
             }
 
@@ -1881,7 +1884,8 @@ namespace ai{
     INLINE void parseFileInVector(
         const std::string filename,
         const char separator,
-        std::vector<T> &vector
+        std::vector<T> &vector,
+        const int skipLines = 0
     ){
         std::ifstream input(filename);
 
@@ -1898,7 +1902,9 @@ namespace ai{
 
         if('\n' == separator){
             for(std::string line; std::getline(input, line);){
-                if('#' == line[0]){
+                --skipLines;
+
+                if('#' == line[0] || 0 <= skipLines){
                     continue;
                 }
 
@@ -1951,11 +1957,12 @@ namespace ai{
     INLINE void accumulateFileInMatrix(
         const std::string filename,
         const char separator,
-        std::vector< std::vector<T> > &matrix
+        std::vector< std::vector<T> > &matrix,
+        const int skipLines = 0
     ){
         std::vector< std::vector<T> > matrixToAdd;
 
-        ai::parseFileInMatrix(filename, separator, matrixToAdd);
+        ai::parseFileInMatrix(filename, separator, matrixToAdd, skipLines);
 
         for(std::size_t i = 0; i < matrix.size(); ++i){
             std::transform(
@@ -1975,11 +1982,12 @@ namespace ai{
         const std::string filename,
         const char separator,
         std::vector<T> &vector,
-        const bool checkForNaN = false
+        const bool checkForNaN = false,
+        const int skipLines = 0
     ){
         std::vector<T> vectorToAdd;
 
-        ai::parseFileInVector(filename, separator, vectorToAdd);
+        ai::parseFileInVector(filename, separator, vectorToAdd, skipLines);
 
         std::transform(
             vector.begin(),
