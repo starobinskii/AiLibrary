@@ -1839,7 +1839,7 @@ namespace ai{
         const std::string filename,
         const char separator,
         std::vector< std::vector<T> > &matrix,
-        const int skipLines = 0
+        int skipLines = 0
     ){
         std::ifstream input(filename);
 
@@ -1885,7 +1885,7 @@ namespace ai{
         const std::string filename,
         const char separator,
         std::vector<T> &vector,
-        const int skipLines = 0
+        int skipLines = 0
     ){
         std::ifstream input(filename);
 
