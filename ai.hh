@@ -3,7 +3,7 @@
 
 /// \file ai.hh
 /// \author Egor Starobinskii
-/// \date 06 June 2019
+/// \date 06 October 2019
 /// \brief Single-header C++ Library
 /// \details This is a single-header C++ Library from Ailurus Studio that
 /// brings you extra time to admire life instead of coding the same functions
@@ -119,7 +119,7 @@ namespace ai{
     /// \return Version as a string
     /// \see https://semver.org
     INLINE std::string getVersion(){
-        return std::string("1.4.0-alpha.2");
+        return std::string("1.4.0-alpha.3");
     }
 
     /// \} End of LibraryInfo Group
@@ -187,7 +187,7 @@ namespace ai{
     }
 
     /// \fn void applyReplace(std::string &text, const std::string
-    /// &substring, const std::string &replacement)
+    /// &substring, const std::string &replacement);
     /// \brief Modifies your string by replacing all occurrences of the given
     /// substring with your text
     /// \details This function replaces all occurrences of a substring in a
@@ -211,7 +211,7 @@ namespace ai{
     }
 
     /// \fn std::string replace(std::string text, const std::string &substring,
-    /// const std::string &replacement)
+    /// const std::string &replacement);
     /// \brief Replaces all occurrences of the substring in the copy of the 
     /// initial string with your text
     /// \details This function replaces all occurrences of a substring in a
@@ -231,7 +231,7 @@ namespace ai{
         return text;
     }
 
-    /// \fn void applyRepeat(std::string &text, const std::size_t counter)
+    /// \fn void applyRepeat(std::string &text, const std::size_t counter);
     /// \brief Repeats your string multiple times and returns the result
     /// \details This function repeats your string multiple times and replaces
     /// the given string with the result
@@ -245,7 +245,7 @@ namespace ai{
         }
     }
 
-    /// \fn std::string repeat(std::string text, const std::size_t counter)
+    /// \fn std::string repeat(std::string text, const std::size_t counter);
     /// \brief Repeats your string multiple times and returns the result
     /// \details This function repeats your string multiple times and returns
     /// the result. Initial string stays the same
@@ -262,7 +262,7 @@ namespace ai{
     }
     
     /// \fn void split(const std::string &stringToSplit, const char delimeter,
-    /// std::vector<std::string> &splittedStrings)
+    /// std::vector<std::string> &splittedStrings);
     /// \brief Splits your string by the given delimeter
     /// \details This function splits your string by the given delimeter and 
     /// stores the result into vector
@@ -285,7 +285,7 @@ namespace ai{
         }
     }
 
-    /// \fn bool equal(const char *charString, const std::string string1)
+    /// \fn bool equal(const char *charString, const std::string string1);
     /// \brief Checks if a char string is equal to a std::string
     /// \details This function compares a char string with a std::string
     /// \param charString Your char string to compare
@@ -297,7 +297,7 @@ namespace ai{
         return string1 == string2;
     }
 
-    /// \fn std::string toUpperCase(std::string input)
+    /// \fn std::string toUpperCase(std::string input);
     /// \brief Converts a string to upper case
     /// \details This function converts the given string to upper case and
     /// returns the result
@@ -309,7 +309,7 @@ namespace ai{
         return input;
     }
 
-    /// \fn std::string toLowerCase(std::string input)
+    /// \fn std::string toLowerCase(std::string input);
     /// \brief Converts a string to lower case
     /// \details This function converts the given string to lower case and
     /// returns the result
@@ -321,7 +321,7 @@ namespace ai{
         return input;
     }
 
-    /// \fn std::string stringToHex(std::string input)
+    /// \fn std::string stringToHex(std::string input);
     /// \brief Converts a string to its hexadecimal representation
     /// \details This function converts a string to its hexadecimal 
     /// representation and returns the result
@@ -338,7 +338,7 @@ namespace ai{
         return stream.str();
     }
     
-    /// \fn std::string stringFromHex(std::string input)
+    /// \fn std::string stringFromHex(std::string input);
     /// \brief Converts a string from its hexadecimal representation
     /// \details This function converts a string from its hexadecimal 
     /// representation and returns the result
@@ -602,6 +602,189 @@ namespace ai{
         return maximum;
     }
 
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE T round(const T value, const std::size_t decimalPlaces = 0){
+        T multiplier = (T) std::pow(10., decimalPlaces);
+        
+        return (T) std::round(value * multiplier) / multiplier;
+    }
+    
+    
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE void sum(
+        const std::vector< std::vector<T> > &matrix,
+        std::vector<T> &vector
+    ){
+        vector.clear();
+        vector.resize(matrix.size());
+        
+        for(std::size_t i = 0; i < vector.size(); ++i){
+            vector[i] = ai::sum(matrix[i]);
+        }
+    }
+        
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE T sum(const std::vector< std::vector<T> > &matrix){
+        T sum = (T) 0.;
+        
+        for(std::size_t i = 0; i < matrix.size(); ++i){
+            for(std::size_t j = 0; j < matrix[i].size(); ++j){
+                sum += matrix[i][j];
+            }
+        }
+        
+        return sum;
+    }
+    
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE T sum(const std::vector<T> &vector){
+        T sum = (T) 0.;
+        
+        for(std::size_t i = 0; i < vector.size(); ++i){
+            sum += vector[i];
+        }
+        
+        return sum;
+    }
+    
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE void sum(
+        const std::vector< std::vector<T> > &left,
+        const std::vector< std::vector<T> > &right,
+        std::vector< std::vector<T> > &result
+    ){
+        if(
+            1 > left.size()
+            || left.size() != right.size()
+            || left[0].size() != right[0].size()
+        ){
+            throw std::runtime_error(
+                "Exception while summing: check the sizes of the input."
+            );
+        }
+        
+        std::size_t length = left[0].size();
+        
+        result.clear();
+        result.resize(left.size());
+        
+        for(std::size_t i = 0; i < left.size(); ++i){
+            result[i].resize(length);
+            
+            for(std::size_t j = 0; j < length; ++j){
+                result[i][j] = left[i][j] + right[i][j];
+            }
+        }
+    }
+    
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE void sum(
+        const std::vector<T> &left,
+        const std::vector<T> &right,
+        std::vector<T> &result
+    ){
+        if(
+            1 > left.size()
+            || left.size() != right.size()
+        ){
+            throw std::runtime_error(
+                "Exception while summing: check the sizes of the input."
+            );
+        }
+        
+        result.clear();
+        result.resize(left.size());
+        
+        for(std::size_t i = 0; i < left.size(); ++i){
+            result[i] = left[i] + right[i];
+        }
+    }
+    
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE void average(
+        const std::vector< std::vector<T> > &matrix,
+        std::vector<T> &vector
+    ){
+        vector.clear();
+        vector.resize(matrix.size());
+        
+        for(std::size_t i = 0; i < vector.size(); ++i){
+            vector[i] = ai::average(matrix[i]);
+        }
+    }
+    
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE T average(const std::vector< std::vector<T> > &matrix){
+        T sum = (T) 0.;
+        
+        std::size_t counter = 0;
+        
+        for(std::size_t i = 0; i < matrix.size(); ++i){
+            for(std::size_t j = 0; j < matrix[i].size(); ++j){
+                sum += matrix[i][j];
+                
+                ++counter;
+            }
+        }
+        
+        return sum / ((T) counter);
+    }
+    
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE T average(const std::vector<T> &vector){
+        return ai::sum(vector) / ((T) vector.size());
+    }
+    
+
+
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE void negate(std::vector< std::vector<T> > &matrix){
+        for(std::size_t i = 0; i < matrix.size(); ++i){
+            for(std::size_t j = 0; j < matrix[i].size(); ++j){
+                matrix[i][j] = -matrix[i][j];
+            }
+        }
+    }
+    
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE void negate(std::vector<T> &vector){
+        for(std::size_t i = 0; i < vector.size(); ++i){
+            vector[i] = -vector[i];
+        }
+    }
+    
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE void multiply(
+        std::vector< std::vector<T> > &matrix,
+        const T value
+    ){
+        for(std::size_t i = 0; i < matrix.size(); ++i){
+            for(std::size_t j = 0; j < matrix[i].size(); ++j){
+                matrix[i][j] *= value;
+            }
+        }
+    }
+    
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE void multiply(std::vector<T> &vector, const T value){
+        for(std::size_t i = 0; i < vector.size(); ++i){
+            vector[i] *= value;
+        }
+    }
+
     /// \fn bool isSquare(const T value);
     /// \brief Checks if number is square
     /// \details This function checks if number is square
@@ -630,6 +813,87 @@ namespace ai{
     template<typename T>
     INLINE bool isSquare(const std::vector< std::vector<T> > &matrix){
         return 0 < matrix.size() && matrix.size() == matrix[0].size();
+    }
+
+    /// \todo Add description. Add tests
+    INLINE double randomReal(
+        const double min = std::numeric_limits<double>::min(),
+        const double max = std::numeric_limits<double>::max()
+    ){
+        std::uniform_real_distribution<double> distribution(min, max);
+    
+        std::mt19937 device(std::random_device{}());
+
+        return distribution(device);
+    }
+
+    /// \todo Add description. Add tests
+    INLINE int randomInteger(
+        const int min = std::numeric_limits<int>::min(),
+        const int max = std::numeric_limits<int>::max()
+    ){
+        std::uniform_int_distribution<int> distribution(min, max);
+    
+        std::mt19937 device(std::random_device{}());
+
+        return distribution(device);
+    }
+
+    /// \todo Add description. Add tests
+    INLINE std::size_t randomIndex(
+        const std::size_t begin,
+        const std::size_t end
+    ){
+        return (std::size_t) ai::randomInteger((int) begin, (int) end);
+    }
+
+    /// \todo Add description. Add tests
+    INLINE double random(
+        const double min = std::numeric_limits<double>::min(),
+        const double max = std::numeric_limits<double>::max()
+    ){
+        return ai::randomReal(min, max);
+    }
+
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE std::size_t getRandomIndex(
+        const std::vector<T> &vector
+    ){
+        return ai::randomIndex(0, vector.size() - 1);
+    }
+
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE T getRandomElement(
+        const std::vector<T> &vector,
+        std::size_t begin = 0,
+        std::size_t end = std::numeric_limits<std::size_t>::max()
+    ){
+        if(vector.size() <= begin){
+            begin = vector.size() - 1;
+        }
+        if(vector.size() <= end){
+            end = vector.size() - 1;
+        }
+        if(begin > end){
+            throw std::runtime_error(
+                    std::string("Exception while accessing random element:")
+                    + std::string("limits are not appropriated.")
+                );
+        }
+        std::cout << "[" << begin << "," << end << "]" << std::endl;
+        return vector[ai::randomIndex(begin, end)];
+    }
+
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE T getRandomElement(
+        const std::vector< std::vector<T> > &matrix
+    ){
+        std::size_t index = ai::getRandomIndex(matrix);
+
+        return matrix[index][ai::getRandomIndex(matrix[index])];
     }
 
     /// \fn void generateRandomVector(std::vector<T> &vector, const
@@ -727,6 +991,24 @@ namespace ai{
         const T max = std::numeric_limits<T>::max()
     ){
         ai::generateRandomMatrix(matrix, size, size, min, max);
+    }
+
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE void fill(std::vector< std::vector<T> > &matrix, T value){
+        for(std::size_t i = 0; i < matrix.size(); ++i){
+            for(std::size_t j = 0; j < matrix[i].size(); ++j){
+                matrix[i][j] = value;
+            }
+        }
+    }
+
+    /// \todo Add description. Add tests
+    template<typename T>
+    INLINE void fill(std::vector<T> &vector, T value){
+        for(std::size_t i = 0; i < vector.size(); ++i){
+            vector[i] = value;
+        }
     }
 
     /// \fn void rotateMatrix(std::vector< std::vector<T> > &matrix, const 
@@ -1309,6 +1591,75 @@ namespace ai{
         for(std::size_t i = 0; i < length; ++i){
             complexVector[i][0] /= doubleTypeLength;
             complexVector[i][1] /= doubleTypeLength;
+        }
+    }
+
+    /// \todo Add description. Add tests
+    INLINE void gaussElimination(
+        std::vector< std::vector<double> > &matrix,
+        std::vector<double> &vector,
+        std::vector<double> &result
+    ){
+        if(
+            1 > matrix.size()
+            || 1 > matrix.size()
+            || matrix.size() != vector.size()
+        ){
+            throw std::runtime_error(
+                "Exception while eliminating: check the sizes of the input."
+            );
+        }
+        
+        const std::size_t length = vector.size();
+        
+        for(std::size_t i = 0; i < length; ++i){
+            if(length != matrix[i].size()){
+                throw std::runtime_error(
+                    std::string("Exception while eliminating: ")
+                    + std::string("check the sizes of the input.")
+                );
+            }
+        }
+
+        result.resize(length);
+
+        for(std::size_t i = 0; i < length; ++i){
+            for(std::size_t k = i + 1; k < length; ++k){
+                if(std::fabs(matrix[i][i]) < std::fabs(matrix[k][i])){
+                    double swap = vector[i];
+            
+                    vector[i] = vector[k];
+                    vector[k] = swap;
+            
+                    for(std::size_t j = 0; j < length; ++j){
+                        swap = matrix[i][j];
+                        matrix[i][j] = matrix[k][j];
+                        matrix[k][j] = swap;
+                    }
+                }
+            }
+        }
+        for(std::size_t i = 0; i < length - 1; ++i){
+            for(std::size_t k = i + 1; k < length; ++k){
+                double coefficient = matrix[k][i] / matrix[i][i];
+        
+                vector[k] = vector[k] - coefficient * vector[i];
+        
+                for(std::size_t j = 0; j < length; ++j){
+                    matrix[k][j] = matrix[k][j] - coefficient * matrix[i][j];
+                }
+            }
+        }
+        for(int i = (int) length - 1; i >= 0; --i){
+            result[i] = vector[i];
+    
+            for(int j = i + 1; j < length; ++j){
+                if(i != j){
+                    result[i] -= matrix[i][j] * result[j];
+                }
+            }
+    
+            result[i] /= matrix[i][i];
         }
     }
 
@@ -2394,6 +2745,9 @@ namespace ai{
     /// by supporting various formats and styles
     /// \{
 
+    /// \todo Add description
+    static bool redirectToFiles = false;
+
     /// \tparam T Any printable type
     /// \exception std::runtime_error If file could not be open or sizes of 
     /// the input are inappropriate
@@ -2610,6 +2964,66 @@ namespace ai{
     ){
         ai::saveLine(filename, line, comment);
     }
+ 
+    /// \todo Add description. Add tests
+    INLINE void info(std::string info){
+        if(ai::redirectToFiles){
+            std::string filename("./info.txt");
+            
+            std::ofstream output(filename, std::ofstream::app);
+
+            if(!output.good()){
+                throw std::runtime_error(
+                    ai::string("Exception while printing to the file: ")
+                    + filename
+                );
+            }
+
+            output << info << std::endl;
+        }else{
+            ai::printStyle(info, ai::blue + ai::bold);
+        }
+    }
+    
+    /// \todo Add description. Add tests
+    INLINE void warning(std::string warning){
+        if(ai::redirectToFiles){
+            std::string filename("./warnings.txt");
+
+            std::ofstream output(filename, std::ofstream::app);
+
+            if(!output.good()){
+                throw std::runtime_error(
+                    ai::string("Exception while printing to the file: ")
+                    + filename
+                );
+            }
+
+            output << warning << std::endl;
+        }else{
+            ai::printStyle(warning, ai::yellow + ai::bold);
+        }
+    }
+    
+    /// \todo Add description. Add tests
+    INLINE void error(std::string error){
+        if(ai::redirectToFiles){
+            std::string filename("./errors.txt");
+
+            std::ofstream output(filename, std::ofstream::app);
+
+            if(!output.good()){
+                throw std::runtime_error(
+                    ai::string("Exception while printing to the file: ")
+                    + filename
+                );
+            }
+
+            output << error << std::endl;
+        }else{
+            ai::printStyle(error, ai::red + ai::bold);
+        }
+    }
 
     #if defined(AI_GCC5_SUPPORT)
         /// \exception std::runtime_error If file could not be open
@@ -2704,7 +3118,7 @@ namespace ai{
         output.write("a3r\0", 4);
         output.write((char*) &integerNumberOfParticles, intSize);
         output.write((char*) &startByte, intSize);
-        output.write("AiLib 1.1.0\0", 12);
+        output.write("AiLib 1.4.0\0", 12);
         output.write((char*) &radius, doubleSize);
         output.write((char*) &futureValue, intSize);
 
@@ -2896,6 +3310,44 @@ namespace ai{
         return ai::folderExists(path);
     }
 
+    /// \todo Add description. Add tests
+    INLINE std::streambuf* redirectCoutToFile(std::ofstream &file){
+        return std::cout.rdbuf(file.rdbuf());
+    }
+
+    /// \todo Add description. Add tests
+    INLINE std::streambuf* redirectCoutToFile(
+        const std::string filename,
+        const bool append = true
+    ){
+        static std::ofstream output;
+
+        if(append){
+            output.open(filename, std::ios_base::app);
+        }else{
+            output.open(filename);
+        }
+
+        if(!output.good()){
+            throw std::runtime_error(
+                ai::string("Exception while redirecting to the file: ")
+                + filename
+            );
+        }
+
+        return ai::redirectCoutToFile(output);
+    }
+
+    /// \todo Add description. Add tests
+    INLINE void restoreCoutFromFile(std::streambuf *buffer){
+        std::cout.rdbuf(buffer);
+    }
+    
+    /// \todo Add description. Add tests
+    INLINE void killCout(){
+        std::cout.setstate(std::ios::failbit);
+    }
+
     /// \fn std::size_t countLinesInFile(const std::string filename, const
     /// std::string token = std::string());
     /// \brief Count number of lines in the file
@@ -3029,448 +3481,7 @@ namespace ai{
     /// Functions to be added in future releases
     namespace ai{
         /// Still looking for a good cross-platform solution
-        INLINE bool createFolder(const std::string name);
-        
-        template<typename T>
-        INLINE void fill(std::vector< std::vector<T> > &matrix, T value){
-            for(std::size_t i = 0; i < matrix.size(); ++i){
-                for(std::size_t j = 0; j < matrix[i].size(); ++j){
-                    matrix[i][j] = value;
-                }
-            }
-        }
-        
-        template<typename T>
-        INLINE void fill(std::vector<T> &vector, T value){
-            for(std::size_t i = 0; i < vector.size(); ++i){
-                vector[i] = value;
-            }
-        }
-        
-        template<typename T>
-        INLINE void sum(
-            const std::vector< std::vector<T> > &matrix,
-            std::vector<T> &vector
-        ){
-            vector.clear();
-            vector.resize(matrix.size());
-            
-            for(std::size_t i = 0; i < vector.size(); ++i){
-                vector[i] = ai::sum(matrix[i]);
-            }
-        }
-            
-        template<typename T>
-        INLINE T sum(const std::vector< std::vector<T> > &matrix){
-            T sum = (T) 0.;
-            
-            for(std::size_t i = 0; i < matrix.size(); ++i){
-                for(std::size_t j = 0; j < matrix[i].size(); ++j){
-                    sum += matrix[i][j];
-                }
-            }
-            
-            return sum;
-        }
-        
-        template<typename T>
-        INLINE T sum(const std::vector<T> &vector){
-            T sum = (T) 0.;
-            
-            for(std::size_t i = 0; i < vector.size(); ++i){
-                sum += vector[i];
-            }
-            
-            return sum;
-        }
-        
-        template<typename T>
-        INLINE void sum(
-            const std::vector< std::vector<T> > &left,
-            const std::vector< std::vector<T> > &right,
-            std::vector< std::vector<T> > &result
-        ){
-            if(
-                1 > left.size()
-                || left.size() != right.size()
-                || left[0].size() != right[0].size()
-            ){
-                throw std::runtime_error(
-                    "Exception while summing: check the sizes of the input."
-                );
-            }
-            
-            std::size_t length = left[0].size();
-            
-            result.clear();
-            result.resize(left.size());
-            
-            for(std::size_t i = 0; i < left.size(); ++i){
-                result[i].resize(length);
-                
-                for(std::size_t j = 0; j < length; ++j){
-                    result[i][j] = left[i][j] + right[i][j];
-                }
-            }
-        }
-        
-        template<typename T>
-        INLINE void sum(
-            const std::vector<T> &left,
-            const std::vector<T> &right,
-            std::vector<T> &result
-        ){
-            if(
-                1 > left.size()
-                || left.size() != right.size()
-            ){
-                throw std::runtime_error(
-                    "Exception while summing: check the sizes of the input."
-                );
-            }
-            
-            result.clear();
-            result.resize(left.size());
-            
-            for(std::size_t i = 0; i < left.size(); ++i){
-                result[i] = left[i] + right[i];
-            }
-        }
-        
-        template<typename T>
-        INLINE void average(
-            const std::vector< std::vector<T> > &matrix,
-            std::vector<T> &vector
-        ){
-            vector.clear();
-            vector.resize(matrix.size());
-            
-            for(std::size_t i = 0; i < vector.size(); ++i){
-                vector[i] = ai::average(matrix[i]);
-            }
-        }
-            
-        template<typename T>
-        INLINE T average(const std::vector< std::vector<T> > &matrix){
-            T sum = (T) 0.;
-            
-            std::size_t counter = 0;
-            
-            for(std::size_t i = 0; i < matrix.size(); ++i){
-                for(std::size_t j = 0; j < matrix[i].size(); ++j){
-                    sum += matrix[i][j];
-                    
-                    ++counter;
-                }
-            }
-            
-            return sum / ((T) counter);
-        }
-        
-        template<typename T>
-        INLINE T average(const std::vector<T> &vector){
-            return ai::sum(vector) / ((T) vector.size());
-        }
-        
-        static bool redirectToFiles = false;
-        
-        INLINE void info(std::string info){
-            if(ai::redirectToFiles){
-                std::string filename("./info.txt");
-                
-                std::ofstream output(filename, std::ofstream::app);
-
-                if(!output.good()){
-                    throw std::runtime_error(
-                        ai::string("Exception while printing to the file: ")
-                        + filename
-                    );
-                }
-
-                output << info << std::endl;
-            }else{
-                ai::printStyle(info, ai::blue + ai::bold);
-            }
-        }
-        
-        INLINE void warning(std::string warning){
-            if(ai::redirectToFiles){
-                std::string filename("./warnings.txt");
-
-                std::ofstream output(filename, std::ofstream::app);
-
-                if(!output.good()){
-                    throw std::runtime_error(
-                        ai::string("Exception while printing to the file: ")
-                        + filename
-                    );
-                }
-
-                output << warning << std::endl;
-            }else{
-                ai::printStyle(warning, ai::yellow + ai::bold);
-            }
-        }
-        
-        INLINE void error(std::string error){
-            if(ai::redirectToFiles){
-                std::string filename("./errors.txt");
-
-                std::ofstream output(filename, std::ofstream::app);
-
-                if(!output.good()){
-                    throw std::runtime_error(
-                        ai::string("Exception while printing to the file: ")
-                        + filename
-                    );
-                }
-
-                output << error << std::endl;
-            }else{
-                ai::printStyle(error, ai::red + ai::bold);
-            }
-        }
-        
-
-        
-        template<typename T>
-        INLINE void negate(std::vector< std::vector<T> > &matrix){
-            for(std::size_t i = 0; i < matrix.size(); ++i){
-                for(std::size_t j = 0; j < matrix[i].size(); ++j){
-                    matrix[i][j] = -matrix[i][j];
-                }
-            }
-        }
-        
-        template<typename T>
-        INLINE void negate(std::vector<T> &vector){
-            for(std::size_t i = 0; i < vector.size(); ++i){
-                vector[i] = -vector[i];
-            }
-        }
-        
-        template<typename T>
-        INLINE void multiply(
-            std::vector< std::vector<T> > &matrix,
-            const T value
-        ){
-            for(std::size_t i = 0; i < matrix.size(); ++i){
-                for(std::size_t j = 0; j < matrix[i].size(); ++j){
-                    matrix[i][j] *= value;
-                }
-            }
-        }
-        
-        template<typename T>
-        INLINE void multiply(std::vector<T> &vector, const T value){
-            for(std::size_t i = 0; i < vector.size(); ++i){
-                vector[i] *= value;
-            }
-        }
-        
-        template<typename T>
-        INLINE T round(const T value, const std::size_t decimalPlaces = 0){
-            T multiplier = (T) std::pow(10., decimalPlaces);
-            
-            return (T) std::round(value * multiplier) / multiplier;
-        }
-        
-        INLINE std::streambuf* redirectCoutToFile(std::ofstream &file){
-            return std::cout.rdbuf(file.rdbuf());
-        }
-
-        INLINE std::streambuf* redirectCoutToFile(
-            const std::string filename,
-            const bool append = true
-        ){
-            static std::ofstream output;
-    
-            if(append){
-                output.open(filename, std::ios_base::app);
-            }else{
-                output.open(filename);
-            }
-
-            if(!output.good()){
-                throw std::runtime_error(
-                    ai::string("Exception while redirecting to the file: ")
-                    + filename
-                );
-            }
-    
-            return ai::redirectCoutToFile(output);
-        }
-
-        INLINE void restoreCoutFromFile(std::streambuf *buffer){
-            std::cout.rdbuf(buffer);
-        }
-        
-        INLINE void killCout(){
-            std::cout.setstate(std::ios::failbit);
-        }
-        
-
-        
-        INLINE void gaussElimination(
-            std::vector< std::vector<double> > &matrix,
-            std::vector<double> &vector,
-            std::vector<double> &result
-        ){
-            if(
-                1 > matrix.size()
-                || 1 > matrix.size()
-                || matrix.size() != vector.size()
-            ){
-                throw std::runtime_error(
-                    "Exception while eliminating: check the sizes of the input."
-                );
-            }
-            
-            const std::size_t length = vector.size();
-            
-            for(std::size_t i = 0; i < length; ++i){
-                if(length != matrix[i].size()){
-                    throw std::runtime_error(
-                        "Exception while eliminating: check the sizes of the input."
-                    );
-                }
-            }
-    
-            result.resize(length);
-    
-            for(std::size_t i = 0; i < length; ++i){
-                for(std::size_t k = i + 1; k < length; ++k){
-                    if(std::fabs(matrix[i][i]) < std::fabs(matrix[k][i])){
-                        double swap = vector[i];
-                
-                        vector[i] = vector[k];
-                        vector[k] = swap;
-                
-                        for(std::size_t j = 0; j < length; ++j){
-                            swap = matrix[i][j];
-                            matrix[i][j] = matrix[k][j];
-                            matrix[k][j] = swap;
-                        }
-                    }
-                }
-            }
-            for(std::size_t i = 0; i < length - 1; ++i){
-                for(std::size_t k = i + 1; k < length; ++k){
-                    double coefficient = matrix[k][i] / matrix[i][i];
-            
-                    vector[k] = vector[k] - coefficient * vector[i];
-            
-                    for(std::size_t j = 0; j < length; ++j){
-                        matrix[k][j] = matrix[k][j] - coefficient * matrix[i][j];
-                    }
-                }
-            }
-            for(int i = (int) length - 1; i >= 0; --i){
-                result[i] = vector[i];
-        
-                for(int j = i + 1; j < length; ++j){
-                    if(i != j){
-                        result[i] -= matrix[i][j] * result[j];
-                    }
-                }
-        
-                result[i] /= matrix[i][i];
-            }
-        }
-
-        INLINE double randomReal(
-            const double min = std::numeric_limits<double>::min(),
-            const double max = std::numeric_limits<double>::max()
-        ){
-            std::uniform_real_distribution<double> distribution(min, max);
-        
-            std::mt19937 device(std::random_device{}());
-
-            return distribution(device);
-        }
-        INLINE int randomInteger(
-            const int min = std::numeric_limits<int>::min(),
-            const int max = std::numeric_limits<int>::max()
-        ){
-            std::uniform_int_distribution<int> distribution(min, max);
-        
-            std::mt19937 device(std::random_device{}());
-
-            return distribution(device);
-        }
-
-        INLINE std::size_t randomIndex(
-            const std::size_t begin,
-            const std::size_t end
-        ){
-            return (std::size_t) ai::randomInteger((int) begin, (int) end);
-        }
-
-        INLINE double random(
-            const double min = std::numeric_limits<double>::min(),
-            const double max = std::numeric_limits<double>::max()
-        ){
-            return ai::randomReal(min, max);
-        }
-
-        template<typename T>
-        INLINE std::size_t getRandomIndex(
-            const std::vector<T> &vector
-        ){
-            return ai::randomIndex(0, vector.size() - 1);
-        }
-
-        template<typename T>
-        INLINE T getRandomElement(
-            const std::vector<T> &vector,
-            std::size_t begin = 0,
-            std::size_t end = std::numeric_limits<std::size_t>::max()
-        ){
-            if(vector.size() <= begin){
-                begin = vector.size() - 1;
-            }
-            if(vector.size() <= end){
-                end = vector.size() - 1;
-            }
-            if(begin > end){
-                throw std::runtime_error("fff");
-            }
-            std::cout << "[" << begin << "," << end << "]" << std::endl;
-            return vector[ai::randomIndex(begin, end)];
-        }
-
-        template<typename T>
-        INLINE T getRandomElement(
-            const std::vector< std::vector<T> > &matrix
-        ){
-            std::size_t index = ai::getRandomIndex(matrix);
-
-            return matrix[index][ai::getRandomIndex(matrix[index])];
-        }
-        
-        
-        // int
-        // mkpath(std::string s,mode_t mode)
-        // {
-        //     size_t pos=0;
-        //     std::string dir;
-        //     int mdret;
-        //
-        //     if(s[s.size()-1]!='/'){
-        //         // force trailing / so we can handle everything in loop
-        //         s+='/';
-        //     }
-        //
-        //     while((pos=s.find_first_of('/',pos))!=std::string::npos){
-        //         dir=s.substr(0,pos++);
-        //         if(dir.size()==0) continue; // if leading / first time is 0 length
-        //         if((mdret=mkdir(dir.c_str(),mode)) && errno!=EEXIST){
-        //             return mdret;
-        //         }
-        //     }
-        //     return mdret;
-        // }
-        //
+        INLINE bool createFolder(const std::string path);
     }
 #endif
 
