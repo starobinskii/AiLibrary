@@ -2575,6 +2575,9 @@ namespace ai{
         std::cout << name << " = " << value << std::endl;
     }
 
+    /// \todo Add description
+    static bool redirectToFiles = false;
+
     /// \brief Terminal color code for black
     /// \details This terminal control sequences sets black font color
     static std::string black("\033[30m");
@@ -2737,6 +2740,107 @@ namespace ai{
         ai::reset = std::string();
     }
 
+    /// \todo Add description. Add tests
+    INLINE void info(
+        std::string info,
+        std::string filename = std::string("./info.txt")
+    ){
+        if(ai::redirectToFiles){            
+            std::ofstream output(filename, std::ofstream::app);
+
+            if(!output.good()){
+                throw std::runtime_error(
+                    ai::string("Exception while printing to the file: ")
+                    + filename
+                );
+            }
+
+            output << info << std::endl;
+        }else{
+            ai::printStyle(info, ai::blue + ai::bold);
+        }
+    }
+    
+    /// \todo Add description. Add tests
+    INLINE void warning(
+        std::string warning,
+        std::string filename = std::string("./warnings.txt")
+    ){
+        if(ai::redirectToFiles){
+            std::ofstream output(filename, std::ofstream::app);
+
+            if(!output.good()){
+                throw std::runtime_error(
+                    ai::string("Exception while printing to the file: ")
+                    + filename
+                );
+            }
+
+            output << warning << std::endl;
+        }else{
+            ai::printStyle(warning, ai::yellow + ai::bold);
+        }
+    }
+    
+    /// \todo Add description. Add tests
+    INLINE void error(
+        std::string error,
+        std::string filename = std::string("./errors.txt")
+    ){  
+        if(ai::redirectToFiles){
+            std::ofstream output(filename, std::ofstream::app);
+
+            if(!output.good()){
+                throw std::runtime_error(
+                    ai::string("Exception while printing to the file: ")
+                    + filename
+                );
+            }
+
+            output << error << std::endl;
+        }else{
+            ai::printStyle(error, ai::red + ai::bold);
+        }
+    }
+
+    /// \todo Add description. Add tests
+    INLINE std::streambuf* redirectCoutToFile(std::ofstream &file){
+        return std::cout.rdbuf(file.rdbuf());
+    }
+
+    /// \todo Add description. Add tests
+    INLINE std::streambuf* redirectCoutToFile(
+        const std::string filename,
+        const bool append = true
+    ){
+        static std::ofstream output;
+
+        if(append){
+            output.open(filename, std::ios_base::app);
+        }else{
+            output.open(filename);
+        }
+
+        if(!output.good()){
+            throw std::runtime_error(
+                ai::string("Exception while redirecting to the file: ")
+                + filename
+            );
+        }
+
+        return ai::redirectCoutToFile(output);
+    }
+
+    /// \todo Add description. Add tests
+    INLINE void restoreCoutFromFile(std::streambuf *buffer){
+        std::cout.rdbuf(buffer);
+    }
+    
+    /// \todo Add description. Add tests
+    INLINE void killCout(){
+        std::cout.setstate(std::ios::failbit);
+    }
+
     /// \} End of PrintFunctions Group
 
     /// \defgroup SaveFunctions Save Functions
@@ -2744,9 +2848,6 @@ namespace ai{
     /// \details Group of functions that will make saving data much easier
     /// by supporting various formats and styles
     /// \{
-
-    /// \todo Add description
-    static bool redirectToFiles = false;
 
     /// \tparam T Any printable type
     /// \exception std::runtime_error If file could not be open or sizes of 
@@ -2963,66 +3064,6 @@ namespace ai{
         std::string comment = std::string()
     ){
         ai::saveLine(filename, line, comment);
-    }
- 
-    /// \todo Add description. Add tests
-    INLINE void info(std::string info){
-        if(ai::redirectToFiles){
-            std::string filename("./info.txt");
-            
-            std::ofstream output(filename, std::ofstream::app);
-
-            if(!output.good()){
-                throw std::runtime_error(
-                    ai::string("Exception while printing to the file: ")
-                    + filename
-                );
-            }
-
-            output << info << std::endl;
-        }else{
-            ai::printStyle(info, ai::blue + ai::bold);
-        }
-    }
-    
-    /// \todo Add description. Add tests
-    INLINE void warning(std::string warning){
-        if(ai::redirectToFiles){
-            std::string filename("./warnings.txt");
-
-            std::ofstream output(filename, std::ofstream::app);
-
-            if(!output.good()){
-                throw std::runtime_error(
-                    ai::string("Exception while printing to the file: ")
-                    + filename
-                );
-            }
-
-            output << warning << std::endl;
-        }else{
-            ai::printStyle(warning, ai::yellow + ai::bold);
-        }
-    }
-    
-    /// \todo Add description. Add tests
-    INLINE void error(std::string error){
-        if(ai::redirectToFiles){
-            std::string filename("./errors.txt");
-
-            std::ofstream output(filename, std::ofstream::app);
-
-            if(!output.good()){
-                throw std::runtime_error(
-                    ai::string("Exception while printing to the file: ")
-                    + filename
-                );
-            }
-
-            output << error << std::endl;
-        }else{
-            ai::printStyle(error, ai::red + ai::bold);
-        }
     }
 
     #if defined(AI_GCC5_SUPPORT)
@@ -3308,44 +3349,6 @@ namespace ai{
     /// \todo Add tests
     INLINE bool isFolder(const std::string path){
         return ai::folderExists(path);
-    }
-
-    /// \todo Add description. Add tests
-    INLINE std::streambuf* redirectCoutToFile(std::ofstream &file){
-        return std::cout.rdbuf(file.rdbuf());
-    }
-
-    /// \todo Add description. Add tests
-    INLINE std::streambuf* redirectCoutToFile(
-        const std::string filename,
-        const bool append = true
-    ){
-        static std::ofstream output;
-
-        if(append){
-            output.open(filename, std::ios_base::app);
-        }else{
-            output.open(filename);
-        }
-
-        if(!output.good()){
-            throw std::runtime_error(
-                ai::string("Exception while redirecting to the file: ")
-                + filename
-            );
-        }
-
-        return ai::redirectCoutToFile(output);
-    }
-
-    /// \todo Add description. Add tests
-    INLINE void restoreCoutFromFile(std::streambuf *buffer){
-        std::cout.rdbuf(buffer);
-    }
-    
-    /// \todo Add description. Add tests
-    INLINE void killCout(){
-        std::cout.setstate(std::ios::failbit);
     }
 
     /// \fn std::size_t countLinesInFile(const std::string filename, const
